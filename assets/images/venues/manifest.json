@@ -1,0 +1,43 @@
+{
+  "8-bit-bar": {
+    "name": "8-Bit Bar",
+    "images": [
+      {
+        "src": "assets/images/venues/8-bit-bar/8-bit-stage.webp",
+        "credit": "📷 A Soft Focus",
+        "width": 960,
+        "height": 840
+      }
+    ]
+  },
+  "beach-house-hotel": {
+    "name": "Beach House Hotel",
+    "images": [
+      {
+        "src": "assets/images/venues/beach-house-hotel/beach-house-piano-vocal.webp",
+        "credit": "📷 @shawshotsvideo",
+        "width": 1440,
+        "height": 960
+      }
+    ]
+  },
+  "hervey-bay-boat-club": {
+    "name": "Hervey Bay Boat Club",
+    "images": []
+  },
+  "the-bayswater": {
+    "name": "The Bayswater",
+    "images": []
+  },
+  "_placeholder": {
+    "name": "Placeholder",
+    "images": [
+      {
+        "src": "assets/images/venues/_placeholder/us-playing-piano-vocal.webp",
+        "credit": "📷 @shawshotsvideo",
+        "width": 1440,
+        "height": 960
+      }
+    ]
+  }
+}

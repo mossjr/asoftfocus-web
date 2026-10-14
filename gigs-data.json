@@ -51,7 +51,12 @@
       "name": "The Full Band Experience (Duo + Backing Tracks)",
       "subtitle": "Piano/Keys, Powerhouse Vocals & JamZone Custom Backing",
       "description": "Full-band energy without the 5-piece price tag or stage footprint. Using custom multi-track accompaniment via JamZone, Kyle and Sammy-Jay deliver a huge, dance-floor-ready sound spanning 80s, 90s, 00s, and modern anthems.",
-      "idealFor": ["Clubs, Pubs & RSLs", "Friday & Saturday Night Crowds", "Wedding Receptions & Parties", "Festivals & Community Stages"]
+      "idealFor": [
+        "Clubs, Pubs & RSLs",
+        "Friday & Saturday Night Crowds",
+        "Wedding Receptions & Parties",
+        "Festivals & Community Stages"
+      ]
     },
     {
       "id": "intimate-duo",
@@ -59,7 +64,12 @@
       "name": "The Intimate Duet",
       "subtitle": "Stripped-Back Piano & Soulful Vocals",
       "description": "Raw, emotional, and captivating. Built on our roots in musical theatre and storytelling, we reimagine iconic songs in 'A Soft Focus Style'—shifting effortlessly from delicate, pin-drop ballads to soaring vocal moments. Available 100% off-grid on battery power for up to 2 hours.",
-      "idealFor": ["Sunday Afternoon Sessions", "Beach & Garden Ceremonies (2-Hr Off-Grid Battery Rig)", "Wineries & Boutique Bars", "Listening Rooms & VIP Events"]
+      "idealFor": [
+        "Sunday Afternoon Sessions",
+        "Beach & Garden Ceremonies (2-Hr Off-Grid Battery Rig)",
+        "Wineries & Boutique Bars",
+        "Listening Rooms & VIP Events"
+      ]
     },
     {
       "id": "solo-piano",
@@ -67,14 +77,20 @@
       "name": "Solo Piano by Kyle",
       "subtitle": "Sophisticated Instrumental & Dinner Music",
       "description": "Warm, unobtrusive, and refined solo piano arrangements by Kyle. Perfect as standalone background ambience or as a seamless prelude hour before Sammy-Jay joins the stage for the main vocal sets.",
-      "idealFor": ["Fine Dining & Resort Lobbies", "Cocktail Hours & Corporate Dinners", "Gallery Openings & Private Soirées", "Add-On Prelude to Duo Bookings"]
+      "idealFor": [
+        "Fine Dining & Resort Lobbies",
+        "Cocktail Hours & Corporate Dinners",
+        "Gallery Openings & Private Soirées",
+        "Add-On Prelude to Duo Bookings"
+      ]
     }
   ],
   "upcomingGigs": [
     {
       "id": "2026-10-24-8-bit-bar",
       "title": "A Soft Focus Live at 8-Bit Bar",
-      "venue": "8-Bit Bar",
+      "venue": "8-bit-bar",
+      "venueName": "8-Bit Bar",
       "address": "1/352 Esplanade",
       "town": "Scarness",
       "region": "QLD",
@@ -83,15 +99,14 @@
       "end": "2026-10-24T23:30:00+10:00",
       "format": "Piano & Vocal Duo",
       "public": true,
-      "image": "assets/images/venues/8-bit-bar.webp",
-      "imageCredit": "📷 A Soft Focus",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655",
       "source": "Direct"
     },
     {
       "id": "2026-11-20-hervey-bay-boat-club",
       "title": "A Soft Focus Live at Hervey Bay Boat Club",
-      "venue": "Hervey Bay Boat Club",
+      "venue": "hervey-bay-boat-club",
+      "venueName": "Hervey Bay Boat Club",
       "address": "Buccaneer Dr",
       "town": "Urangan",
       "region": "QLD",
@@ -100,15 +115,14 @@
       "end": "2026-11-20T22:00:00+10:00",
       "format": "Piano & Vocal Duo",
       "public": true,
-      "image": null,
-      "imageCredit": null,
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hervey%20Bay%20Boat%20Club%2C%20Buccaneer%20Dr%2C%20Urangan%20QLD%204655",
       "source": "Direct"
     },
     {
       "id": "2026-12-12-hervey-bay-boat-club",
       "title": "A Soft Focus Live at Hervey Bay Boat Club",
-      "venue": "Hervey Bay Boat Club",
+      "venue": "hervey-bay-boat-club",
+      "venueName": "Hervey Bay Boat Club",
       "address": "Buccaneer Dr",
       "town": "Urangan",
       "region": "QLD",
@@ -117,15 +131,14 @@
       "end": "2026-12-12T22:00:00+10:00",
       "format": "Piano & Vocal Duo",
       "public": true,
-      "image": null,
-      "imageCredit": null,
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hervey%20Bay%20Boat%20Club%2C%20Buccaneer%20Dr%2C%20Urangan%20QLD%204655",
       "source": "Direct"
     },
     {
       "id": "2026-12-19-8-bit-bar",
       "title": "A Soft Focus Live at 8-Bit Bar",
-      "venue": "8-Bit Bar",
+      "venue": "8-bit-bar",
+      "venueName": "8-Bit Bar",
       "address": "1/352 Esplanade",
       "town": "Scarness",
       "region": "QLD",
@@ -134,15 +147,14 @@
       "end": "2026-12-19T23:30:00+10:00",
       "format": "Piano & Vocal Duo",
       "public": true,
-      "image": "assets/images/venues/8-bit-bar.webp",
-      "imageCredit": "📷 A Soft Focus",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655",
       "source": "Direct"
     },
     {
       "id": "2027-01-30-8-bit-bar",
       "title": "A Soft Focus Live at 8-Bit Bar",
-      "venue": "8-Bit Bar",
+      "venue": "8-bit-bar",
+      "venueName": "8-Bit Bar",
       "address": "1/352 Esplanade",
       "town": "Scarness",
       "region": "QLD",
@@ -151,15 +163,14 @@
       "end": "2027-01-30T23:30:00+10:00",
       "format": "Piano & Vocal Duo",
       "public": true,
-      "image": "assets/images/venues/8-bit-bar.webp",
-      "imageCredit": "📷 A Soft Focus",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655",
       "source": "Direct"
     },
     {
       "id": "2027-08-22-beach-house-hotel-sunday-sesh",
       "title": "A Soft Focus — Sunday Sesh at Beach House Hotel",
-      "venue": "Beach House Hotel",
+      "venue": "beach-house-hotel",
+      "venueName": "Beach House Hotel",
       "address": "344 Esplanade",
       "town": "Scarness",
       "region": "QLD",
@@ -168,8 +179,6 @@
       "end": "2027-08-22T18:00:00+10:00",
       "format": "Sunday Sesh",
       "public": true,
-      "image": "assets/images/venues/beach-house-hotel.webp",
-      "imageCredit": "📷 @shawshotsvideo",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Beach%20House%20Hotel%2C%20344%20Esplanade%2C%20Scarness%20QLD%204655",
       "source": "Surreal"
     }

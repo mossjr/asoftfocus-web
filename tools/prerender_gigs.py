@@ -63,12 +63,42 @@ def full_address(g):
     return f"{g['address']}, {g['town']} {g.get('region', 'QLD')} {g.get('postcode', '')}".strip()
 
 
+def venue_name(g):
+    return g.get("venueName") or g["venue"]
+
+
+def fnv1a(s):
+    """FNV-1a 32-bit over UTF-16 code units — identical to fnv1a() in assets/js/gigs.js."""
+    h = 0x811C9DC5
+    b = s.encode("utf-16-le")
+    for i in range(0, len(b), 2):
+        h ^= b[i] | (b[i + 1] << 8)
+        h = (h * 0x01000193) & 0xFFFFFFFF
+    return h
+
+
+def pick_image(g, manifest):
+    own = (manifest.get(g["venue"]) or {}).get("images") or []
+    lst = own or (manifest.get("_placeholder") or {}).get("images") or []
+    if not lst:
+        return None
+    img = lst[fnv1a(str(g["id"])) % len(lst)]
+    return {"src": img["src"], "credit": img.get("credit"), "placeholder": not own}
+
+
+def img_alt(g):
+    if g.get("_img") and g["_img"]["placeholder"]:
+        return "A Soft Focus performing live — piano & vocals"
+    return f"{venue_name(g)}, {g['town']}"
+
+
 def media_html(g):
-    if g.get("image"):
-        credit = f'<span class="next-gig-credit">{e(g.get("imageCredit"))}</span>' if g.get("imageCredit") else ""
-        return (f'<img src="{e(g["image"])}" alt="{e(g["venue"])}, {e(g["town"])}" loading="eager" />{credit}')
-    return (f'<div class="venue-fallback" role="img" aria-label="{e(g["venue"])}">{ANCHOR_SVG}'
-            f'<span class="venue-fallback-name">{e(g["venue"])}</span>'
+    img = g.get("_img")
+    if img:
+        credit = f'<span class="next-gig-credit">{e(img["credit"])}</span>' if img.get("credit") else ""
+        return f'<img src="{e(img["src"])}" alt="{e(img_alt(g))}" loading="eager" />{credit}'
+    return (f'<div class="venue-fallback" role="img" aria-label="{e(venue_name(g))}">{ANCHOR_SVG}'
+            f'<span class="venue-fallback-name">{e(venue_name(g))}</span>'
             f'<span class="venue-fallback-town">{e(g["town"])}</span></div>')
 
 
@@ -79,7 +109,7 @@ def next_html(g):
         '<div class="next-gig-body">'
         '<div class="next-gig-eyebrow"><span class="live-dot" aria-hidden="true"></span>Next Gig'
         '<span class="next-gig-countdown" data-countdown hidden></span></div>'
-        f'<h2 class="next-gig-venue">{e(g["venue"])}</h2>'
+        f'<h2 class="next-gig-venue">{e(venue_name(g))}</h2>'
         '<ul class="next-gig-meta">'
         f'<li><span>Date</span><strong>{e(date_long(s))}</strong></li>'
         f'<li><span>Time</span><strong>{e(time_str(s))} – {e(time_str(en))}</strong></li>'
@@ -119,12 +149,25 @@ def empty_html(now):
     )
 
 
+def thumb_html(g):
+    img = g.get("_img")
+    if not img:
+        return ""
+    return f'<span class="gig-thumb"><img src="{e(img["src"])}" alt="" loading="lazy" /></span>'
+
+
+def credit_line(g):
+    img = g.get("_img")
+    return f'<small class="gig-photo-credit">{e(img["credit"])}</small>' if img and img.get("credit") else ""
+
+
 def row_html(g):
     s, en = parse(g["start"]), parse(g["end"])
     return (
         f'<div class="gig-row" data-gig-id="{e(g["id"])}">'
         f'<div class="gig-date">{e(date_short(s))}</div>'
-        f'<div class="gig-venue"><strong>{e(g["venue"])}</strong><span>{e(g["address"])}, {e(g["town"])}</span></div>'
+        f'<div class="gig-venue">{thumb_html(g)}<span class="gig-venue-text"><strong>{e(venue_name(g))}</strong>'
+        f'<span>{e(g["address"])}, {e(g["town"])}</span>{credit_line(g)}</span></div>'
         f'<div class="gig-type">{e(time_str(s))} – {e(time_str(en))} • {e(g["format"])}</div>'
         f'<a class="gig-badge" href="{e(g["mapsUrl"])}" target="_blank" rel="noopener">Directions ↗</a>'
         '</div>'
@@ -140,12 +183,12 @@ def event_ld(g):
         "endDate": g["end"],
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "description": f"A Soft Focus (piano & vocal duo) live at {g['venue']}, {g['town']}.",
-        "image": [SITE_URL + (g.get("image") or DEFAULT_IMAGE)],
+        "description": f"A Soft Focus (piano & vocal duo) live at {venue_name(g)}, {g['town']}.",
+        "image": [SITE_URL + (g["_img"]["src"] if g.get("_img") else DEFAULT_IMAGE)],
         "url": SITE_URL + "#upcoming",
         "location": {
             "@type": "Place",
-            "name": g["venue"],
+            "name": venue_name(g),
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": g["address"],
@@ -179,8 +222,8 @@ def ics_text(g, stamp):
         f"UID:{g['id']}@asoftfocus.com", f"DTSTAMP:{stamp}",
         f"DTSTART:{ics_date(g['start'])}", f"DTEND:{ics_date(g['end'])}",
         f"SUMMARY:{esc(g['title'])}",
-        f"LOCATION:{esc(g['venue'] + ', ' + full_address(g))}",
-        f"DESCRIPTION:{esc('A Soft Focus live at ' + g['venue'] + '. Directions: ' + g['mapsUrl'])}",
+        f"LOCATION:{esc(venue_name(g) + ', ' + full_address(g))}",
+        f"DESCRIPTION:{esc('A Soft Focus live at ' + venue_name(g) + '. Directions: ' + g['mapsUrl'])}",
         f"URL:{SITE_URL}", "END:VEVENT", "END:VCALENDAR",
     ]
     return "\r\n".join(fold(l) for l in lines) + "\r\n"
@@ -200,15 +243,31 @@ def main():
     now = datetime.fromisoformat(args.now) if args.now else datetime.now(timezone.utc)
 
     data = json.load(open(os.path.join(SITE_DIR, "gigs-data.json"), encoding="utf-8"))
+    try:
+        manifest = json.load(open(os.path.join(SITE_DIR, "assets", "images", "venues", "manifest.json"), encoding="utf-8"))
+    except FileNotFoundError:
+        manifest = {}
     gigs = sorted((g for g in data.get("upcomingGigs", []) if g.get("public")), key=lambda g: g["start"])
+    for g in gigs:
+        g["_img"] = pick_image(g, manifest)
     upcoming = [g for g in gigs if datetime.fromisoformat(g["end"]) > now]
 
     ics_dir = os.path.join(SITE_DIR, "assets", "ics")
     os.makedirs(ics_dir, exist_ok=True)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    stamp_re = re.compile(r"^DTSTAMP:.*$", re.M)
     for g in gigs:
-        with open(os.path.join(ics_dir, g["id"] + ".ics"), "w", encoding="utf-8", newline="") as f:
-            f.write(ics_text(g, stamp))
+        ics_path = os.path.join(ics_dir, g["id"] + ".ics")
+        new = ics_text(g, stamp)
+        try:
+            old = open(ics_path, encoding="utf-8", newline="").read()
+        except FileNotFoundError:
+            old = None
+        # Only rewrite when the event itself changed (ignore DTSTAMP) so repeated runs are no-ops.
+        if old is not None and stamp_re.sub("", old) == stamp_re.sub("", new):
+            continue
+        with open(ics_path, "w", encoding="utf-8", newline="") as f:
+            f.write(new)
 
     path = os.path.join(SITE_DIR, "index.html")
     doc = open(path, encoding="utf-8").read()

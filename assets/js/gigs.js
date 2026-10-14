@@ -1,8 +1,10 @@
 /* A Soft Focus — automatic "Next Gig" hero, Upcoming Gigs list & MusicEvent JSON-LD.
  *
- * On every page load this reads gigs-data.json and compares each gig against the
+ * On every page load this reads gigs-data.json + assets/images/venues/manifest.json
+ * (built by tools/sync_venue_photos.py) and compares each gig against the
  * current time (Australia/Brisbane = UTC+10 all year, no daylight saving):
  *   - features the first public gig whose end time hasn't passed in #nextGig
+ *   - photo = manifest[gig.venue] (stable pick per gig id), else manifest._placeholder
  *   - lists all not-yet-ended gigs in #upcomingGigsList (hides the block if none)
  *   - moves ended gigs to the top of the Recent Shows list (#recentGigsList)
  *   - rewrites the MusicEvent JSON-LD (#gigsJsonLd) to upcoming gigs only
@@ -52,6 +54,28 @@
   function fullAddress(g) {
     return (g.address + ', ' + g.town + ' ' + (g.region || 'QLD') + ' ' + (g.postcode || '')).trim();
   }
+  function venueName(g) { return g.venueName || g.venue; }
+
+  // FNV-1a 32-bit — stable per gig id, so a venue with several photos always
+  // shows the same one for a given gig (no flicker between reloads).
+  // Keep identical to fnv1a() in tools/prerender_gigs.py.
+  function fnv1a(str) {
+    var h = 0x811c9dc5;
+    for (var i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 0x01000193) >>> 0;
+    }
+    return h >>> 0;
+  }
+
+  // Photo for a gig: manifest[venue] -> else the "_placeholder" band photo -> else null (branded card).
+  function pickImage(g, manifest) {
+    var own = manifest && manifest[g.venue] && manifest[g.venue].images;
+    var list = own && own.length ? own : (manifest && manifest._placeholder && manifest._placeholder.images) || [];
+    if (!list.length) return null;
+    var img = list[fnv1a(String(g.id)) % list.length];
+    return { src: img.src, credit: img.credit, placeholder: !(own && own.length) };
+  }
 
   function countdown(g, now) {
     if (now >= g._start && now < g._end) return 'On now';
@@ -86,8 +110,8 @@
       'UID:' + g.id + '@asoftfocus.com', 'DTSTAMP:' + icsDate(Date.now()),
       'DTSTART:' + icsDate(g._start), 'DTEND:' + icsDate(g._end),
       'SUMMARY:' + icsEsc(g.title),
-      'LOCATION:' + icsEsc(g.venue + ', ' + fullAddress(g)),
-      'DESCRIPTION:' + icsEsc('A Soft Focus live at ' + g.venue + '. Directions: ' + g.mapsUrl),
+      'LOCATION:' + icsEsc(venueName(g) + ', ' + fullAddress(g)),
+      'DESCRIPTION:' + icsEsc('A Soft Focus live at ' + venueName(g) + '. Directions: ' + g.mapsUrl),
       'URL:' + SITE_URL, 'END:VEVENT', 'END:VCALENDAR'
     ].map(fold).join('\r\n') + '\r\n';
   }
@@ -100,13 +124,19 @@
   }
 
   // ---------- markup (keep in sync with tools/prerender_gigs.py) ----------
+  function imgAlt(g) {
+    return g._img && g._img.placeholder
+      ? 'A Soft Focus performing live — piano & vocals'
+      : venueName(g) + ', ' + g.town;
+  }
+
   function mediaHtml(g) {
-    if (g.image) {
-      return '<img src="' + esc(g.image) + '" alt="' + esc(g.venue) + ', ' + esc(g.town) + '" loading="eager" />' +
-        (g.imageCredit ? '<span class="next-gig-credit">' + esc(g.imageCredit) + '</span>' : '');
+    if (g._img) {
+      return '<img src="' + esc(g._img.src) + '" alt="' + esc(imgAlt(g)) + '" loading="eager" />' +
+        (g._img.credit ? '<span class="next-gig-credit">' + esc(g._img.credit) + '</span>' : '');
     }
-    return '<div class="venue-fallback" role="img" aria-label="' + esc(g.venue) + '">' + ANCHOR_SVG +
-      '<span class="venue-fallback-name">' + esc(g.venue) + '</span>' +
+    return '<div class="venue-fallback" role="img" aria-label="' + esc(venueName(g)) + '">' + ANCHOR_SVG +
+      '<span class="venue-fallback-name">' + esc(venueName(g)) + '</span>' +
       '<span class="venue-fallback-town">' + esc(g.town) + '</span></div>';
   }
 
@@ -115,7 +145,7 @@
       '<div class="next-gig-body">' +
       '<div class="next-gig-eyebrow"><span class="live-dot" aria-hidden="true"></span>Next Gig' +
       '<span class="next-gig-countdown" data-countdown hidden></span></div>' +
-      '<h2 class="next-gig-venue">' + esc(g.venue) + '</h2>' +
+      '<h2 class="next-gig-venue">' + esc(venueName(g)) + '</h2>' +
       '<ul class="next-gig-meta">' +
       '<li><span>Date</span><strong>' + esc(dateLong(g._start)) + '</strong></li>' +
       '<li><span>Time</span><strong>' + esc(timeStr(g._start)) + ' – ' + esc(timeStr(g._end)) + '</strong></li>' +
@@ -138,10 +168,18 @@
       '</div>';
   }
 
+  function thumbHtml(g) {
+    if (!g._img) return '';
+    return '<span class="gig-thumb"><img src="' + esc(g._img.src) + '" alt="" loading="lazy" /></span>';
+  }
+  function creditLine(g) {
+    return g._img && g._img.credit ? '<small class="gig-photo-credit">' + esc(g._img.credit) + '</small>' : '';
+  }
+
   function rowHtml(g, past) {
     return '<div class="gig-row" data-gig-id="' + esc(g.id) + '">' +
       '<div class="gig-date">' + esc(dateShort(g._start)) + '</div>' +
-      '<div class="gig-venue"><strong>' + esc(g.venue) + '</strong><span>' + esc(g.address) + ', ' + esc(g.town) + '</span></div>' +
+      '<div class="gig-venue">' + thumbHtml(g) + '<span class="gig-venue-text"><strong>' + esc(venueName(g)) + '</strong><span>' + esc(g.address) + ', ' + esc(g.town) + '</span>' + creditLine(g) + '</span></div>' +
       '<div class="gig-type">' + esc(timeStr(g._start)) + ' – ' + esc(timeStr(g._end)) + ' • ' + esc(g.format) + '</div>' +
       (past
         ? '<span class="gig-badge">Recent Show</span>'
@@ -158,12 +196,12 @@
       endDate: g.end,
       eventStatus: 'https://schema.org/EventScheduled',
       eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-      description: 'A Soft Focus (piano & vocal duo) live at ' + g.venue + ', ' + g.town + '.',
-      image: [SITE_URL + (g.image || DEFAULT_IMAGE)],
+      description: 'A Soft Focus (piano & vocal duo) live at ' + venueName(g) + ', ' + g.town + '.',
+      image: [SITE_URL + (g._img ? g._img.src : DEFAULT_IMAGE)],
       url: SITE_URL + '#upcoming',
       location: {
         '@type': 'Place',
-        name: g.venue,
+        name: venueName(g),
         address: {
           '@type': 'PostalAddress',
           streetAddress: g.address,
@@ -178,12 +216,13 @@
   }
 
   // ---------- render ----------
-  function render(data) {
+  function render(data, manifest) {
     var now = Date.now();
     var gigs = (data.upcomingGigs || []).filter(function (g) {
       if (!g || g.public !== true) return false;
       g._start = Date.parse(g.start);
       g._end = Date.parse(g.end);
+      g._img = pickImage(g, manifest);
       return !isNaN(g._start) && !isNaN(g._end);
     }).sort(function (a, b) { return a._start - b._start; });
 
@@ -234,11 +273,18 @@
     ld.textContent = JSON.stringify(upcoming.map(eventLd));
   }
 
+  function getJson(url) {
+    return fetch(url, { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+  }
+
   function start() {
-    fetch('gigs-data.json', { cache: 'no-cache' })
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-      .then(function (data) {
-        render(data);
+    // The photo manifest is optional: if it fails we still render (branded card fallback).
+    var manifestP = getJson('assets/images/venues/manifest.json').catch(function () { return {}; });
+    Promise.all([getJson('gigs-data.json'), manifestP])
+      .then(function (res) {
+        var data = res[0], manifest = res[1];
+        render(data, manifest);
         // Keep an open tab current: refresh the countdown every minute and
         // re-render when the featured gig ends.
         setInterval(function () {
@@ -247,15 +293,15 @@
           var cd = hero && hero.querySelector('[data-countdown]');
           var current = (data.upcomingGigs || []).filter(function (g) { return g._end > now && g.public === true; })
             .sort(function (a, b) { return a._start - b._start; })[0];
-          if (!current) { if (!hero.classList.contains('is-empty')) render(data); return; }
-          if (hero.getAttribute('data-gig-id') !== current.id) { render(data); return; }
+          if (!current) { if (!hero.classList.contains('is-empty')) render(data, manifest); return; }
+          if (hero.getAttribute('data-gig-id') !== current.id) { render(data, manifest); return; }
           if (cd) cd.textContent = countdown(current, now);
         }, 60000);
       })
       .catch(function () { /* keep server-rendered fallback */ });
   }
 
-  if (window.fetch) {
+  if (window.fetch && window.Promise) {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
     else start();
   }

@@ -84,7 +84,7 @@
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "description": "A Soft Focus (piano & vocal duo) live at 8-Bit Bar, Scarness.",
     "image": [
-      "https://asoftfocus.com/assets/images/venues/8-bit-bar.webp"
+      "https://asoftfocus.com/assets/images/venues/8-bit-bar/8-bit-stage.webp"
     ],
     "url": "https://asoftfocus.com/#upcoming",
     "location": {
@@ -115,7 +115,7 @@
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "description": "A Soft Focus (piano & vocal duo) live at Hervey Bay Boat Club, Urangan.",
     "image": [
-      "https://asoftfocus.com/assets/images/hero-duo-velvet.webp"
+      "https://asoftfocus.com/assets/images/venues/_placeholder/us-playing-piano-vocal.webp"
     ],
     "url": "https://asoftfocus.com/#upcoming",
     "location": {
@@ -146,7 +146,7 @@
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "description": "A Soft Focus (piano & vocal duo) live at Hervey Bay Boat Club, Urangan.",
     "image": [
-      "https://asoftfocus.com/assets/images/hero-duo-velvet.webp"
+      "https://asoftfocus.com/assets/images/venues/_placeholder/us-playing-piano-vocal.webp"
     ],
     "url": "https://asoftfocus.com/#upcoming",
     "location": {
@@ -177,7 +177,7 @@
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "description": "A Soft Focus (piano & vocal duo) live at 8-Bit Bar, Scarness.",
     "image": [
-      "https://asoftfocus.com/assets/images/venues/8-bit-bar.webp"
+      "https://asoftfocus.com/assets/images/venues/8-bit-bar/8-bit-stage.webp"
     ],
     "url": "https://asoftfocus.com/#upcoming",
     "location": {
@@ -208,7 +208,7 @@
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "description": "A Soft Focus (piano & vocal duo) live at 8-Bit Bar, Scarness.",
     "image": [
-      "https://asoftfocus.com/assets/images/venues/8-bit-bar.webp"
+      "https://asoftfocus.com/assets/images/venues/8-bit-bar/8-bit-stage.webp"
     ],
     "url": "https://asoftfocus.com/#upcoming",
     "location": {
@@ -239,7 +239,7 @@
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "description": "A Soft Focus (piano & vocal duo) live at Beach House Hotel, Scarness.",
     "image": [
-      "https://asoftfocus.com/assets/images/venues/beach-house-hotel.webp"
+      "https://asoftfocus.com/assets/images/venues/beach-house-hotel/beach-house-piano-vocal.webp"
     ],
     "url": "https://asoftfocus.com/#upcoming",
     "location": {
@@ -1265,6 +1265,23 @@
     a.gig-badge { text-decoration: none; }
     .gigs-block + .gigs-block { margin-top: 72px; }
 
+    /* Venue photo thumbnail inside Upcoming Gigs rows */
+    .gig-venue:has(.gig-thumb) { display: flex; align-items: center; gap: 14px; }
+    .gig-venue-text strong { display: block; font-size: 1.02rem; }
+    .gig-venue-text > span { font-size: 0.84rem; opacity: 0.75; }
+    .gig-thumb {
+      position: relative;
+      flex: 0 0 64px;
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--gold);
+      background: #000;
+    }
+    .gig-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gig-photo-credit { display: block; font-size: 0.7rem; opacity: 0.6; margin-top: 2px; }
+
     @media (max-width: 960px) {
       .next-gig { grid-template-columns: 1fr; }
       .next-gig-media { min-height: 250px; border-right: none; border-bottom: 1px solid var(--gold-border); }
@@ -1364,7 +1381,7 @@
 
   <!-- Next Gig Hero — server-rendered default; assets/js/gigs.js re-renders from gigs-data.json -->
   <section class="next-gig-wrap" aria-label="Next gig">
-    <div class="next-gig" id="nextGig"><!-- GIGS:NEXT:START --><div class="next-gig-media"><img src="assets/images/venues/8-bit-bar.webp" alt="8-Bit Bar, Scarness" loading="eager" /><span class="next-gig-credit">📷 A Soft Focus</span></div><div class="next-gig-body"><div class="next-gig-eyebrow"><span class="live-dot" aria-hidden="true"></span>Next Gig<span class="next-gig-countdown" data-countdown hidden></span></div><h2 class="next-gig-venue">8-Bit Bar</h2><ul class="next-gig-meta"><li><span>Date</span><strong>Saturday 24 October 2026</strong></li><li><span>Time</span><strong>8:00pm – 11:30pm</strong></li><li><span>Where</span><strong>1/352 Esplanade, Scarness QLD 4655</strong></li></ul><div class="next-gig-actions"><a class="btn-gold" href="https://www.google.com/maps/search/?api=1&amp;query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655" target="_blank" rel="noopener">Get directions ↗</a><a class="btn-white-key" href="assets/ics/2026-10-24-8-bit-bar.ics" download="2026-10-24-8-bit-bar.ics" data-ics>Add to calendar</a></div><a class="next-gig-more" href="#upcoming">See all upcoming gigs ↓</a></div><!-- GIGS:NEXT:END --></div>
+    <div class="next-gig" id="nextGig"><!-- GIGS:NEXT:START --><div class="next-gig-media"><img src="assets/images/venues/8-bit-bar/8-bit-stage.webp" alt="8-Bit Bar, Scarness" loading="eager" /><span class="next-gig-credit">📷 A Soft Focus</span></div><div class="next-gig-body"><div class="next-gig-eyebrow"><span class="live-dot" aria-hidden="true"></span>Next Gig<span class="next-gig-countdown" data-countdown hidden></span></div><h2 class="next-gig-venue">8-Bit Bar</h2><ul class="next-gig-meta"><li><span>Date</span><strong>Saturday 24 October 2026</strong></li><li><span>Time</span><strong>8:00pm – 11:30pm</strong></li><li><span>Where</span><strong>1/352 Esplanade, Scarness QLD 4655</strong></li></ul><div class="next-gig-actions"><a class="btn-gold" href="https://www.google.com/maps/search/?api=1&amp;query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655" target="_blank" rel="noopener">Get directions ↗</a><a class="btn-white-key" href="assets/ics/2026-10-24-8-bit-bar.ics" download="2026-10-24-8-bit-bar.ics" data-ics>Add to calendar</a></div><a class="next-gig-more" href="#upcoming">See all upcoming gigs ↓</a></div><!-- GIGS:NEXT:END --></div>
   </section>
 
   <!-- Piano Keys Motif Divider -->
@@ -1650,7 +1667,7 @@
           <div class="deco-line"><div class="deco-diamond"></div></div>
           <p>Public shows around Hervey Bay. Private events, birthdays and weddings aren't listed.</p>
         </div>
-        <div class="gigs-table" id="upcomingGigsList"><!-- GIGS:UPCOMING:START --><div class="gig-row" data-gig-id="2026-10-24-8-bit-bar"><div class="gig-date">Sat 24 Oct 2026</div><div class="gig-venue"><strong>8-Bit Bar</strong><span>1/352 Esplanade, Scarness</span></div><div class="gig-type">8:00pm – 11:30pm • Piano &amp; Vocal Duo</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><div class="gig-row" data-gig-id="2026-11-20-hervey-bay-boat-club"><div class="gig-date">Fri 20 Nov 2026</div><div class="gig-venue"><strong>Hervey Bay Boat Club</strong><span>Buccaneer Dr, Urangan</span></div><div class="gig-type">6:00pm – 10:00pm • Piano &amp; Vocal Duo</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=Hervey%20Bay%20Boat%20Club%2C%20Buccaneer%20Dr%2C%20Urangan%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><div class="gig-row" data-gig-id="2026-12-12-hervey-bay-boat-club"><div class="gig-date">Sat 12 Dec 2026</div><div class="gig-venue"><strong>Hervey Bay Boat Club</strong><span>Buccaneer Dr, Urangan</span></div><div class="gig-type">6:00pm – 10:00pm • Piano &amp; Vocal Duo</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=Hervey%20Bay%20Boat%20Club%2C%20Buccaneer%20Dr%2C%20Urangan%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><div class="gig-row" data-gig-id="2026-12-19-8-bit-bar"><div class="gig-date">Sat 19 Dec 2026</div><div class="gig-venue"><strong>8-Bit Bar</strong><span>1/352 Esplanade, Scarness</span></div><div class="gig-type">8:00pm – 11:30pm • Piano &amp; Vocal Duo</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><div class="gig-row" data-gig-id="2027-01-30-8-bit-bar"><div class="gig-date">Sat 30 Jan 2027</div><div class="gig-venue"><strong>8-Bit Bar</strong><span>1/352 Esplanade, Scarness</span></div><div class="gig-type">8:00pm – 11:30pm • Piano &amp; Vocal Duo</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><div class="gig-row" data-gig-id="2027-08-22-beach-house-hotel-sunday-sesh"><div class="gig-date">Sun 22 Aug 2027</div><div class="gig-venue"><strong>Beach House Hotel</strong><span>344 Esplanade, Scarness</span></div><div class="gig-type">2:00pm – 6:00pm • Sunday Sesh</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=Beach%20House%20Hotel%2C%20344%20Esplanade%2C%20Scarness%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><!-- GIGS:UPCOMING:END --></div>
+        <div class="gigs-table" id="upcomingGigsList"><!-- GIGS:UPCOMING:START --><div class="gig-row" data-gig-id="2026-10-24-8-bit-bar"><div class="gig-date">Sat 24 Oct 2026</div><div class="gig-venue"><span class="gig-thumb"><img src="assets/images/venues/8-bit-bar/8-bit-stage.webp" alt="" loading="lazy" /></span><span class="gig-venue-text"><strong>8-Bit Bar</strong><span>1/352 Esplanade, Scarness</span><small class="gig-photo-credit">📷 A Soft Focus</small></span></div><div class="gig-type">8:00pm – 11:30pm • Piano &amp; Vocal Duo</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><div class="gig-row" data-gig-id="2026-11-20-hervey-bay-boat-club"><div class="gig-date">Fri 20 Nov 2026</div><div class="gig-venue"><span class="gig-thumb"><img src="assets/images/venues/_placeholder/us-playing-piano-vocal.webp" alt="" loading="lazy" /></span><span class="gig-venue-text"><strong>Hervey Bay Boat Club</strong><span>Buccaneer Dr, Urangan</span><small class="gig-photo-credit">📷 @shawshotsvideo</small></span></div><div class="gig-type">6:00pm – 10:00pm • Piano &amp; Vocal Duo</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=Hervey%20Bay%20Boat%20Club%2C%20Buccaneer%20Dr%2C%20Urangan%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><div class="gig-row" data-gig-id="2026-12-12-hervey-bay-boat-club"><div class="gig-date">Sat 12 Dec 2026</div><div class="gig-venue"><span class="gig-thumb"><img src="assets/images/venues/_placeholder/us-playing-piano-vocal.webp" alt="" loading="lazy" /></span><span class="gig-venue-text"><strong>Hervey Bay Boat Club</strong><span>Buccaneer Dr, Urangan</span><small class="gig-photo-credit">📷 @shawshotsvideo</small></span></div><div class="gig-type">6:00pm – 10:00pm • Piano &amp; Vocal Duo</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=Hervey%20Bay%20Boat%20Club%2C%20Buccaneer%20Dr%2C%20Urangan%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><div class="gig-row" data-gig-id="2026-12-19-8-bit-bar"><div class="gig-date">Sat 19 Dec 2026</div><div class="gig-venue"><span class="gig-thumb"><img src="assets/images/venues/8-bit-bar/8-bit-stage.webp" alt="" loading="lazy" /></span><span class="gig-venue-text"><strong>8-Bit Bar</strong><span>1/352 Esplanade, Scarness</span><small class="gig-photo-credit">📷 A Soft Focus</small></span></div><div class="gig-type">8:00pm – 11:30pm • Piano &amp; Vocal Duo</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><div class="gig-row" data-gig-id="2027-01-30-8-bit-bar"><div class="gig-date">Sat 30 Jan 2027</div><div class="gig-venue"><span class="gig-thumb"><img src="assets/images/venues/8-bit-bar/8-bit-stage.webp" alt="" loading="lazy" /></span><span class="gig-venue-text"><strong>8-Bit Bar</strong><span>1/352 Esplanade, Scarness</span><small class="gig-photo-credit">📷 A Soft Focus</small></span></div><div class="gig-type">8:00pm – 11:30pm • Piano &amp; Vocal Duo</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><div class="gig-row" data-gig-id="2027-08-22-beach-house-hotel-sunday-sesh"><div class="gig-date">Sun 22 Aug 2027</div><div class="gig-venue"><span class="gig-thumb"><img src="assets/images/venues/beach-house-hotel/beach-house-piano-vocal.webp" alt="" loading="lazy" /></span><span class="gig-venue-text"><strong>Beach House Hotel</strong><span>344 Esplanade, Scarness</span><small class="gig-photo-credit">📷 @shawshotsvideo</small></span></div><div class="gig-type">2:00pm – 6:00pm • Sunday Sesh</div><a class="gig-badge" href="https://www.google.com/maps/search/?api=1&amp;query=Beach%20House%20Hotel%2C%20344%20Esplanade%2C%20Scarness%20QLD%204655" target="_blank" rel="noopener">Directions ↗</a></div><!-- GIGS:UPCOMING:END --></div>
       </div>
 
       <div class="gigs-block">
