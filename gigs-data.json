@@ -1,12 +1,13 @@
 {
   "band": {
     "name": "A Soft Focus",
-    "tagline": "Piano, Guitar & Powerhouse Vocals — Reimagined Live Music from Hervey Bay, QLD",
+    "tagline": "Piano & Powerhouse Vocals — Reimagined Live Music from Hervey Bay, QLD",
     "location": "Hervey Bay & Fraser Coast, Queensland",
     "email": "info@asoftfocus.com",
     "bookingEmail": "bookings@asoftfocus.com",
     "instagram": "https://www.instagram.com/asoftfocusband/",
-    "twitch": "https://www.twitch.tv/a_soft_focus"
+    "twitch": "https://www.twitch.tv/a_soft_focus",
+    "offGridCapability": "100% battery-powered off-grid audio & piano setup capable of performing almost anywhere for up to 2 hours with zero access to mains power"
   },
   "pressHighlights": [
     {
@@ -25,17 +26,17 @@
       "id": "full-duo",
       "badge": "Most Popular for Venues & Receptions",
       "name": "The Full Band Experience (Duo + Backing Tracks)",
-      "subtitle": "Piano/Guitar, Powerhouse Vocals & JamZone Custom Backing",
+      "subtitle": "Piano/Keys, Powerhouse Vocals & JamZone Custom Backing",
       "description": "Full-band energy without the 5-piece price tag or stage footprint. Using custom multi-track accompaniment via JamZone, Kyle and Sammy-Jay deliver a huge, dance-floor-ready sound spanning 80s, 90s, 00s, and modern anthems.",
       "idealFor": ["Clubs, Pubs & RSLs", "Friday & Saturday Night Crowds", "Wedding Receptions & Parties", "Festivals & Community Stages"]
     },
     {
       "id": "intimate-duo",
       "badge": "Signature Acoustic",
-      "name": "The Intimate Acoustic Duet",
-      "subtitle": "Stripped-Back Piano or Acoustic Guitar & Soulful Vocals",
-      "description": "Raw, emotional, and captivating. Built on our roots in musical theatre and storytelling, we reimagine iconic songs in 'A Soft Focus Style'—shifting effortlessly from delicate, pin-drop ballads to soaring vocal moments.",
-      "idealFor": ["Sunday Afternoon Sessions", "Wineries & Boutique Bars", "Wedding Ceremonies & Canapés", "Listening Rooms & VIP Events"]
+      "name": "The Intimate Duet",
+      "subtitle": "Stripped-Back Piano & Soulful Vocals",
+      "description": "Raw, emotional, and captivating. Built on our roots in musical theatre and storytelling, we reimagine iconic songs in 'A Soft Focus Style'—shifting effortlessly from delicate, pin-drop ballads to soaring vocal moments. Available 100% off-grid on battery power for up to 2 hours.",
+      "idealFor": ["Sunday Afternoon Sessions", "Beach & Garden Ceremonies (2-Hr Off-Grid Battery Rig)", "Wineries & Boutique Bars", "Listening Rooms & VIP Events"]
     },
     {
       "id": "solo-piano",
