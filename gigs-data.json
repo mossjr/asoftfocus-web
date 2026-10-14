@@ -25,9 +25,12 @@
     },
     "weddings": {
       "title": "Tailored Wedding Packages",
-      "rate": "$1,000 – $2,000",
+      "rate": "from $1,000",
+      "priceFrom": 1000,
+      "priceCurrency": "AUD",
+      "priceNote": "quoted individually",
       "url": "/weddings.html",
-      "details": "Depending on coverage and duration—from 100% off-grid battery beach/garden ceremonies to solo piano dinner service and full-band JamZone reception party sets."
+      "details": "Every wedding is quoted individually based on coverage, duration and location—from 100% off-grid battery beach/garden ceremonies to solo piano dinner service and full-band JamZone reception party sets."
     }
   },
   "pressHighlights": [
