@@ -7,7 +7,28 @@
     "bookingEmail": "bookings@asoftfocus.com",
     "instagram": "https://www.instagram.com/asoftfocusband/",
     "twitch": "https://www.twitch.tv/a_soft_focus",
+    "googleReviewUrl": "https://g.page/r/CVoT1rWIwn6cEBM/review",
     "offGridCapability": "100% battery-powered off-grid audio & piano setup capable of performing almost anywhere for up to 2 hours with zero access to mains power"
+  },
+  "pricing": {
+    "venues": {
+      "title": "Clubs, Pubs & Established Venues",
+      "rate": "$150 / hour",
+      "url": "/venues.html",
+      "details": "100% self-contained PA speaker, digital audio mixer & vocal microphones included. Available as Full Duo + JamZone Backing, Intimate Duet, or Solo Piano."
+    },
+    "privateEvents": {
+      "title": "Private Events, Parties & Corporate Functions",
+      "rate": "$200 / hour",
+      "url": "/private-events.html",
+      "details": "Birthdays, galas, school formals, boat charters, and backyard/beach celebrations. Includes 2-hour off-grid battery power option."
+    },
+    "weddings": {
+      "title": "Tailored Wedding Packages",
+      "rate": "$1,000 – $2,000",
+      "url": "/weddings.html",
+      "details": "Depending on coverage and duration—from 100% off-grid battery beach/garden ceremonies to solo piano dinner service and full-band JamZone reception party sets."
+    }
   },
   "pressHighlights": [
     {
