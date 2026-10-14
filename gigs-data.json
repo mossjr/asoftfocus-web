@@ -1,0 +1,93 @@
+{
+  "band": {
+    "name": "A Soft Focus",
+    "tagline": "Piano, Guitar & Powerhouse Vocals — Reimagined Live Music from Hervey Bay, QLD",
+    "location": "Hervey Bay & Fraser Coast, Queensland",
+    "email": "info@asoftfocus.com",
+    "bookingEmail": "bookings@asoftfocus.com",
+    "instagram": "https://www.instagram.com/asoftfocusband/",
+    "twitch": "https://www.twitch.tv/a_soft_focus"
+  },
+  "pressHighlights": [
+    {
+      "title": "Front Cover & 2-Page Spread — What's On Fraser Coast Magazine",
+      "issue": "Issue 109 • October 2026",
+      "quote": "Striking the Right Notes: Hervey Bay's captivating piano & vocal duo bringing theatre-grade storytelling and powerhouse arrangements to the Fraser Coast."
+    },
+    {
+      "title": "Grand Finalists — Unplugged Music Competition 2026",
+      "issue": "Beach House Hotel, Hervey Bay • September 2026",
+      "quote": "Known for show-stopping reimagined covers—from Billie Eilish and Demi Lovato to a viral theatrical take on Teenage Dirtbag."
+    }
+  ],
+  "packages": [
+    {
+      "id": "full-duo",
+      "badge": "Most Popular for Venues & Receptions",
+      "name": "The Full Band Experience (Duo + Backing Tracks)",
+      "subtitle": "Piano/Guitar, Powerhouse Vocals & JamZone Custom Backing",
+      "description": "Full-band energy without the 5-piece price tag or stage footprint. Using custom multi-track accompaniment via JamZone, Kyle and Sammy-Jay deliver a huge, dance-floor-ready sound spanning 80s, 90s, 00s, and modern anthems.",
+      "idealFor": ["Clubs, Pubs & RSLs", "Friday & Saturday Night Crowds", "Wedding Receptions & Parties", "Festivals & Community Stages"]
+    },
+    {
+      "id": "intimate-duo",
+      "badge": "Signature Acoustic",
+      "name": "The Intimate Acoustic Duet",
+      "subtitle": "Stripped-Back Piano or Acoustic Guitar & Soulful Vocals",
+      "description": "Raw, emotional, and captivating. Built on our roots in musical theatre and storytelling, we reimagine iconic songs in 'A Soft Focus Style'—shifting effortlessly from delicate, pin-drop ballads to soaring vocal moments.",
+      "idealFor": ["Sunday Afternoon Sessions", "Wineries & Boutique Bars", "Wedding Ceremonies & Canapés", "Listening Rooms & VIP Events"]
+    },
+    {
+      "id": "solo-piano",
+      "badge": "Instrumental Ambience",
+      "name": "Solo Piano by Kyle",
+      "subtitle": "Sophisticated Instrumental & Dinner Music",
+      "description": "Warm, unobtrusive, and refined solo piano arrangements by Kyle. Perfect as standalone background ambience or as a seamless prelude hour before Sammy-Jay joins the stage for the main vocal sets.",
+      "idealFor": ["Fine Dining & Resort Lobbies", "Cocktail Hours & Corporate Dinners", "Gallery Openings & Private Soirées", "Add-On Prelude to Duo Bookings"]
+    }
+  ],
+  "upcomingAndRecentGigs": [
+    {
+      "date": "Oct 2026",
+      "venue": "What's On Fraser Coast Magazine",
+      "location": "Fraser Coast, QLD",
+      "type": "Cover Feature & 2-Page Spread",
+      "status": "Featured Now"
+    },
+    {
+      "date": "17 Sep 2026",
+      "venue": "Beach House Hotel — Unplugged Grand Finals",
+      "location": "Scarness, Hervey Bay",
+      "type": "Finalist Showcase",
+      "status": "Recent Highlight"
+    },
+    {
+      "date": "13 Sep 2026",
+      "venue": "Hervey Bay Boat Club",
+      "location": "Urangan, Hervey Bay",
+      "type": "Sunday Harbour Session (2:00 PM)",
+      "status": "Recent Highlight"
+    },
+    {
+      "date": "12 Sep 2026",
+      "venue": "8-Bit Bar",
+      "location": "Torquay, Hervey Bay",
+      "type": "Saturday Night Live (8:30 PM)",
+      "status": "Recent Highlight"
+    },
+    {
+      "date": "29 Aug 2026",
+      "venue": "Hervey Bay Whale Festival",
+      "location": "Seafront Oval Stage, Hervey Bay",
+      "type": "Main Festival Stage (2:00 PM)",
+      "status": "Recent Highlight"
+    },
+    {
+      "date": "22 Aug 2026",
+      "venue": "The Bayswater Bar & Grill",
+      "location": "Urangan, Hervey Bay",
+      "type": "Saturday Evening Session (6:00 – 10:00 PM)",
+      "status": "Recent Highlight"
+    }
+  ]
+}

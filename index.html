@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Soft Focus | Piano & Vocal Duet — Hervey Bay & Fraser Coast</title>
+  <meta name="description" content="A Soft Focus is Kyle & Sammy-Jay: a captivating Piano, Guitar & Vocal duo based in Hervey Bay, QLD. Available for venues, weddings, private events, and solo piano across the Fraser Coast." />
+  <meta name="keywords" content="A Soft Focus, Hervey Bay live music, Fraser Coast wedding band, piano vocal duo Queensland, Sammy-Jay Cobar, Kyle Davis, solo pianist Hervey Bay, acoustic duo Fraser Coast" />
+  <meta name="author" content="A Soft Focus (Kyle Davis & Sammy-Jay Cobar)" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://asoftfocus.com/" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/logos/logo-white.svg" />
+  <link rel="alternate icon" type="image/jpeg" href="assets/logos/logo-gold-black.jpg" />
+  <link rel="apple-touch-icon" href="assets/logos/logo-gold-black.jpg" />
+
+  <!-- OpenGraph / Facebook / Instagram -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="A Soft Focus" />
+  <meta property="og:title" content="A Soft Focus | Piano, Guitar & Powerhouse Vocal Duet — Hervey Bay, QLD" />
+  <meta property="og:description" content="Grand piano elegance meets powerhouse live music. Book Kyle & Sammy-Jay for Fraser Coast venues, weddings, solo dinner piano, and private events." />
+  <meta property="og:url" content="https://asoftfocus.com/" />
+  <meta property="og:image" content="https://asoftfocus.com/assets/images/hero-duo-velvet.webp" />
+  <meta property="og:image:alt" content="A Soft Focus — Kyle at the grand piano and Sammy-Jay on vintage microphone" />
+  <meta property="og:locale" content="en_AU" />
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A Soft Focus | Piano & Vocal Duet — Hervey Bay & Fraser Coast" />
+  <meta name="twitter:description" content="From intimate acoustic storytelling and solo dinner piano to full-band JamZone crowd sets. Book A Soft Focus at bookings@asoftfocus.com." />
+  <meta name="twitter:image" content="https://asoftfocus.com/assets/images/hero-duo-velvet.webp" />
+
+  <!-- Structured Data (JSON-LD MusicGroup + Local SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "A Soft Focus",
+    "url": "https://asoftfocus.com/",
+    "image": "https://asoftfocus.com/assets/images/hero-duo-velvet.webp",
+    "logo": "https://asoftfocus.com/assets/logos/logo-gold-black.jpg",
+    "description": "A Soft Focus is Kyle Davis and Sammy-Jay Cobar: a Piano, Guitar & Powerhouse Vocal duo based in Hervey Bay, Fraser Coast, Queensland. Available for venues, weddings, corporate events, and solo piano.",
+    "genre": ["Pop", "Acoustic", "Musical Theatre", "Soul", "Easy Listening", "Rock Classics"],
+    "email": "bookings@asoftfocus.com",
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Hervey Bay, Queensland, Australia",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hervey Bay",
+        "addressRegion": "QLD",
+        "addressCountry": "AU"
+      }
+    },
+    "areaServed": ["Hervey Bay", "Fraser Coast", "Maryborough", "K'gari", "Bundaberg", "Gympie", "Sunshine Coast"],
+    "member": [
+      {
+        "@type": "Person",
+        "name": "Sammy-Jay Cobar",
+        "roleName": "Lead Vocals"
+      },
+      {
+        "@type": "Person",
+        "name": "Kyle Davis",
+        "roleName": "Piano, Keys, Acoustic Guitar & Live Sound"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/asoftfocusband/",
+      "https://www.twitch.tv/a_soft_focus"
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --piano-black: #000000;
+      --piano-lacquer: linear-gradient(145deg, #181818 0%, #050505 42%, #000000 50%, #0c0c0c 100%);
+      --piano-gloss-card: linear-gradient(160deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.02) 32%, rgba(0,0,0,0.98) 32.5%, #040404 100%);
+      --pure-white: #ffffff;
+      --gold: #d4af37;
+      --gold-bright: #f3d478;
+      --gold-metallic: linear-gradient(135deg, #f5dc8c 0%, #d4af37 50%, #9e7a1c 100%);
+      --gold-border: rgba(212, 175, 55, 0.45);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--piano-black);
+      color: var(--pure-white);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      background-color: var(--piano-black);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Subtle Piano Key Motif Divider */
+    .piano-keys-divider {
+      height: 14px;
+      width: 100%;
+      background: repeating-linear-gradient(
+        90deg,
+        #ffffff 0px,
+        #ffffff 28px,
+        #000000 28px,
+        #000000 30px,
+        #ffffff 30px,
+        #ffffff 44px,
+        #000000 44px,
+        #000000 58px,
+        #ffffff 58px,
+        #ffffff 72px,
+        #000000 72px,
+        #000000 86px,
+        #ffffff 86px,
+        #ffffff 114px,
+        #000000 114px,
+        #000000 116px
+      );
+      border-top: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Art Deco Gold Divider */
+    .deco-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 16px 0 26px;
+    }
+    .deco-line::before,
+    .deco-line::after {
+      content: "";
+      height: 1px;
+      width: 100px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .deco-diamond {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+    }
+
+    /* Glossy Piano Black Navigation */
+    header.navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 6%;
+      background: linear-gradient(180deg, #1c1c1c 0%, #060606 48%, #000000 52%, #000000 100%);
+      border-bottom: 1px solid var(--gold-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--pure-white);
+    }
+
+    .brand-lockup img {
+      height: 44px;
+      width: auto;
+      border-radius: 6px;
+      border: 1px solid var(--gold);
+    }
+
+    .brand-lockup span {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pure-white);
+    }
+
+    .brand-lockup span em {
+      color: var(--gold-bright);
+      font-style: normal;
+    }
+
+    nav.nav-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
+
+    nav.nav-links a {
+      color: var(--pure-white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav.nav-links a:hover {
+      color: var(--gold-bright);
+    }
+
+    /* Buttons */
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-metallic);
+      color: #000000 !important;
+      font-weight: 700;
+      padding: 11px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 22px rgba(212, 175, 55, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(212, 175, 55, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .btn-white-key {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--pure-white);
+      color: var(--piano-black) !important;
+      border: 1px solid var(--pure-white);
+      font-weight: 700;
+      padding: 11px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+      transition: all 0.2s;
+    }
+
+    .btn-white-key:hover {
+      background: var(--piano-black);
+      color: var(--pure-white) !important;
+      border-color: var(--gold);
+    }
+
+    .btn-black-key {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--piano-lacquer);
+      color: var(--pure-white) !important;
+      border: 1px solid var(--gold);
+      font-weight: 700;
+      padding: 11px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      transition: all 0.2s;
+    }
+
+    .btn-black-key:hover {
+      border-color: var(--piano-black);
+      background: var(--gold-metallic);
+      color: var(--piano-black) !important;
+    }
+
+    /* Hero Section — Glossy Piano Black */
+    .hero-wrapper {
+      background: radial-gradient(ellipse at 75% 15%, rgba(255, 255, 255, 0.09) 0%, rgba(212, 175, 55, 0.05) 28%, #000000 70%);
+      position: relative;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 44px;
+      align-items: center;
+      padding: 68px 6% 78px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: #080808;
+      border: 1px solid var(--gold);
+      color: var(--gold-bright);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.9rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      font-weight: 700;
+      color: var(--pure-white);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      color: var(--gold-bright);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero p.lead {
+      font-size: 1.08rem;
+      color: #dedede;
+      max-width: 580px;
+      margin-bottom: 30px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .stat-item strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--gold-bright);
+    }
+
+    .stat-item span {
+      font-size: 0.76rem;
+      color: var(--pure-white);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-frame {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--gold);
+      background: #000;
+      box-shadow: 0 28px 65px rgba(0, 0, 0, 0.95), 0 0 0 6px #000000, 0 0 0 7px rgba(255,255,255,0.22);
+    }
+
+    .hero-frame img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .floating-logo-card {
+      position: absolute;
+      bottom: -22px;
+      left: -22px;
+      background: var(--piano-gloss-card);
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.95), inset 0 1px 0 rgba(255,255,255,0.24);
+      max-width: 310px;
+    }
+
+    .floating-logo-card img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--gold-border);
+    }
+
+    .floating-logo-card div {
+      font-size: 0.78rem;
+      line-height: 1.35;
+      color: #e8e8e8;
+    }
+
+    .floating-logo-card strong {
+      color: var(--gold-bright);
+      display: block;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+
+    /* Section Modes: White Key (Pure White) vs Black Key (Piano Black) */
+    .section-white-key {
+      background: var(--pure-white);
+      color: var(--piano-black);
+      padding: 80px 6%;
+      position: relative;
+    }
+
+    .section-black-key {
+      background: var(--piano-black);
+      background-image: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.06) 0%, transparent 55%);
+      color: var(--pure-white);
+      padding: 80px 6%;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    /* Press / Featured Banner (Pure White Key Section) */
+    .press-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .magazine-img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid var(--piano-black);
+      box-shadow: 12px 14px 0px var(--piano-black), 12px 14px 0px 2px var(--gold);
+      transform: rotate(-1.5deg);
+    }
+
+    .press-copy .eyebrow {
+      color: #9e7a1c;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .press-copy h2 {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--piano-black);
+      margin-bottom: 14px;
+      line-height: 1.12;
+    }
+
+    .press-copy p {
+      color: #1a1a1a;
+      margin-bottom: 22px;
+      font-size: 1rem;
+    }
+
+    .venue-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .venue-pill {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 7px 15px;
+      border-radius: 999px;
+      background: var(--piano-black);
+      border: 1px solid var(--gold);
+      color: var(--pure-white);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22);
+    }
+
+    .venue-pill span {
+      color: var(--gold-bright);
+      margin-right: 4px;
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 52px;
+    }
+
+    .section-header .eyebrow {
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .section-white-key .section-header .eyebrow {
+      color: #9e7a1c;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 3.8vw, 3.1rem);
+      margin-top: 6px;
+      font-weight: 700;
+    }
+
+    .section-header p {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    /* 3 Packages Grid — Alternating Piano Key Cards */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    /* Glossy Black Piano Key Card */
+    .package-card {
+      background: var(--piano-gloss-card);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-top: 4px solid var(--gold);
+      border-radius: 14px;
+      padding: 34px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.26);
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    /* Pure White Piano Key Spotlight Card */
+    .package-card.white-key-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+      color: var(--piano-black);
+      border: 2px solid var(--gold);
+      border-top: 6px solid var(--gold);
+      box-shadow: 0 24px 60px rgba(255, 255, 255, 0.12);
+    }
+
+    .package-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-bright);
+    }
+
+    .pkg-badge {
+      align-self: flex-start;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.16);
+      border: 1px solid var(--gold);
+      color: var(--gold-bright);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .package-card.white-key-card .pkg-badge {
+      background: var(--piano-black);
+      color: var(--gold-bright);
+    }
+
+    .package-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      line-height: 1.18;
+    }
+
+    .package-card .pkg-sub {
+      color: var(--gold-bright);
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .package-card.white-key-card .pkg-sub {
+      color: #8f6b10;
+    }
+
+    .package-card p {
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+      opacity: 0.88;
+    }
+
+    .pkg-list {
+      list-style: none;
+      margin-bottom: 26px;
+      border-top: 1px solid rgba(212, 175, 55, 0.35);
+      padding-top: 16px;
+    }
+
+    .pkg-list li {
+      font-size: 0.86rem;
+      font-weight: 500;
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pkg-list li::before {
+      content: "✦";
+      color: var(--gold);
+      font-size: 0.85rem;
+    }
+
+    /* Watch & Listen Video Showcase */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .video-card {
+      background: var(--piano-black);
+      color: var(--pure-white);
+      border: 2px solid var(--piano-black);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 10px 10px 0px var(--gold);
+    }
+
+    .video-card video {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      display: block;
+      background: #000;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .video-meta {
+      padding: 20px;
+      background: var(--piano-gloss-card);
+    }
+
+    .video-meta span {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-bright);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .video-meta h4 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--pure-white);
+      margin-bottom: 6px;
+    }
+
+    .video-meta p {
+      font-size: 0.85rem;
+      color: #d0d0d0;
+    }
+
+    /* Meet the Duo — Black & White Key Contrast Cards */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .bio-card {
+      background: var(--piano-gloss-card);
+      border: 1px solid var(--gold);
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.22);
+    }
+
+    .bio-card.ivory-bio {
+      background: var(--pure-white);
+      color: var(--piano-black);
+      border: 2px solid var(--gold);
+    }
+
+    .bio-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 290px;
+      object-fit: cover;
+    }
+
+    .bio-content {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .bio-content .role {
+      color: var(--gold-bright);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .bio-card.ivory-bio .bio-content .role {
+      color: #9e7a1c;
+    }
+
+    .bio-content h3 {
+      font-family: var(--font-serif);
+      font-size: 1.95rem;
+      margin-bottom: 10px;
+    }
+
+    .bio-content p {
+      font-size: 0.9rem;
+      opacity: 0.88;
+      margin-bottom: 10px;
+    }
+
+    /* Gigs & Live Dates — Alternating Black & White Piano Rows */
+    .gigs-table {
+      border: 2px solid var(--piano-black);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 12px 12px 0px var(--gold);
+    }
+
+    .gig-row {
+      display: grid;
+      grid-template-columns: 140px 1.3fr 1fr 160px;
+      align-items: center;
+      padding: 20px 28px;
+      gap: 16px;
+      background: var(--pure-white);
+      color: var(--piano-black);
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .gig-row:nth-child(even) {
+      background: var(--piano-lacquer);
+      color: var(--pure-white);
+    }
+
+    .gig-date {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #9e7a1c;
+    }
+
+    .gig-row:nth-child(even) .gig-date {
+      color: var(--gold-bright);
+    }
+
+    .gig-venue strong {
+      display: block;
+      font-size: 1.02rem;
+    }
+
+    .gig-venue span {
+      font-size: 0.84rem;
+      opacity: 0.75;
+    }
+
+    .gig-type {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .gig-badge {
+      justify-self: end;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--piano-black);
+      border: 1px solid var(--gold);
+      color: var(--gold-bright);
+    }
+
+    .gig-row:nth-child(even) .gig-badge {
+      background: var(--pure-white);
+      color: var(--piano-black);
+      border-color: var(--pure-white);
+    }
+
+    /* Booking Section — Glossy Piano Black Lacquer Box */
+    .booking-box {
+      background: var(--piano-gloss-card);
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      padding: 52px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 44px;
+      align-items: start;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.26);
+    }
+
+    .booking-form {
+      display: grid;
+      gap: 16px;
+      background: var(--pure-white);
+      color: var(--piano-black);
+      padding: 32px;
+      border-radius: 14px;
+      border: 2px solid var(--gold);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .booking-form label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--piano-black);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      background: #f8f8f8;
+      border: 1px solid #cccccc;
+      border-radius: 8px;
+      color: var(--piano-black);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+    }
+
+    .booking-form input:focus,
+    .booking-form select:focus,
+    .booking-form textarea:focus {
+      outline: none;
+      border-color: var(--piano-black);
+      background: var(--pure-white);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+
+    .booking-form textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    footer {
+      text-align: center;
+      padding: 44px 6%;
+      background: #000000;
+      border-top: 1px solid var(--gold-border);
+      color: #b5b5b5;
+      font-size: 0.86rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .press-inner,
+      .packages-grid,
+      .video-grid,
+      .bio-grid,
+      .booking-box {
+        grid-template-columns: 1fr;
+      }
+      .bio-card {
+        grid-template-columns: 1fr;
+      }
+      .gig-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+      .gig-badge {
+        justify-self: start;
+      }
+      nav.nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Glossy Piano Black Navigation -->
+  <header class="navbar">
+    <a href="#" class="brand-lockup">
+      <img src="assets/logos/logo-gold-black.jpg" alt="A Soft Focus Logo" />
+      <span>A Soft <em>Focus</em></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#packages">Live Packages</a>
+      <a href="#watch">Watch & Listen</a>
+      <a href="#about">Meet Kyle & Sammy</a>
+      <a href="#gigs">Gigs & Press</a>
+      <a href="epk.html">Press Kit (EPK)</a>
+      <a href="#book" class="btn-gold">Book Us</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section (Piano Black + Pure White + Gold) -->
+  <div class="hero-wrapper">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="hero-badge">✦ Hervey Bay & Fraser Coast • Piano & Voice Duet</div>
+        <h1>Grand Piano Elegance Meets <em>Powerhouse</em> Live Music.</h1>
+        <p class="lead">
+          From intimate, pin-drop acoustic ballads and sophisticated solo dinner piano to full-band crowd anthems powered by custom JamZone backing tracks—<strong>Kyle & Sammy-Jay</strong> bring theatre-grade warmth and energy to every stage.
+        </p>
+        <div class="hero-ctas">
+          <a href="#book" class="btn-gold">Book Your Date ✦</a>
+          <a href="#watch" class="btn-white-key">▶ Watch Live Reels</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>3-in-1</strong>
+            <span>Tailored Live Formats</span>
+          </div>
+          <div class="stat-item">
+            <strong>Oct '26</strong>
+            <span>Magazine Cover Artists</span>
+          </div>
+          <div class="stat-item">
+            <strong>80s–Now</strong>
+            <span>Reimagined & Crowd Classics</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-frame">
+          <img src="assets/images/hero-duo-velvet.webp" alt="A Soft Focus - Kyle at the grand piano and Sammy-Jay on vintage microphone" />
+        </div>
+        <div class="floating-logo-card">
+          <img src="assets/logos/logo-gold-black.jpg" alt="A Soft Focus Crest" />
+          <div>
+            <strong>A Soft Focus</strong>
+            Front Cover Artists in <em>What's On Fraser Coast Magazine</em> & Unplugged 2026 Grand Finalists.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Piano Keys Motif Divider -->
+  <div class="piano-keys-divider"></div>
+
+  <!-- Magazine Cover & Social Proof Strip (Pure White Key Section) -->
+  <section class="section-white-key" id="press">
+    <div class="press-inner">
+      <img src="assets/images/magazine-cover.jpg" alt="What's On Fraser Coast Magazine October 2026 Front Cover featuring A Soft Focus" class="magazine-img" />
+      <div class="press-copy">
+        <div class="eyebrow">Press & Stage Highlights</div>
+        <h2>"Striking the Right Notes Across the Fraser Coast"</h2>
+        <p>
+          Honoured to be featured on the <strong>Front Cover & 2-Page Spread of What's On Fraser Coast Magazine (Issue 109)</strong> and selected as <strong>Grand Finalists at the 2026 Beach House Unplugged Competition</strong>. Whether commanding a festival stage or setting the mood for an intimate coastal wedding, A Soft Focus turns every performance into an occasion.
+        </p>
+        <div class="venue-pills">
+          <span class="venue-pill"><span>✦</span> Hervey Bay Boat Club</span>
+          <span class="venue-pill"><span>✦</span> Beach House Hotel</span>
+          <span class="venue-pill"><span>✦</span> The Bayswater Bar & Grill</span>
+          <span class="venue-pill"><span>✦</span> Hervey Bay Whale Festival</span>
+          <span class="venue-pill"><span>✦</span> 8-Bit Bar</span>
+          <span class="venue-pill"><span>✦</span> Private Weddings & Formals</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 Signature Booking Packages (Glossy Piano Black Section w/ White Key Spotlight Card) -->
+  <section class="section-black-key" id="packages">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="eyebrow">Versatile Live Formats</div>
+        <h2>Three Distinct Ways to Experience Us</h2>
+        <div class="deco-line"><div class="deco-diamond"></div></div>
+        <p>Mix and match for a single event (like Solo Piano for dinner followed by the Full Duo for the dance floor) or book the exact setup that suits your venue and budget.</p>
+      </div>
+
+      <div class="packages-grid">
+        <!-- Package 1: White Key Spotlight Card -->
+        <div class="package-card white-key-card">
+          <div>
+            <span class="pkg-badge">Most Popular for Venues & Parties</span>
+            <h3>The Full Band Experience</h3>
+            <div class="pkg-sub">Piano/Guitar + Powerhouse Vocals + JamZone Backing</div>
+            <p>
+              All the punch and energy of a full band in a compact 2-piece footprint. Using multi-track JamZone accompaniment, we fill the room with upbeat 80s, 90s, 00s, and modern singalong favourites.
+            </p>
+            <ul class="pkg-list">
+              <li>Clubs, Pubs, RSLs & Resort Bars</li>
+              <li>Friday & Saturday Night Main Sets</li>
+              <li>Wedding Receptions & Birthday Parties</li>
+              <li>Festivals & Community Celebrations</li>
+            </ul>
+          </div>
+          <a href="#book" class="btn-black-key" style="justify-content:center;">Book Full Duo Setup</a>
+        </div>
+
+        <!-- Package 2: Glossy Black Key Card -->
+        <div class="package-card">
+          <div>
+            <span class="pkg-badge">Signature Acoustic</span>
+            <h3>The Intimate Duet</h3>
+            <div class="pkg-sub">Stripped-Back Piano or Guitar & Soulful Vocals</div>
+            <p>
+              Pure, unhurried musical chemistry. Drawing on our theatre backgrounds, we reimagine beloved songs "A Soft Focus Style"—moving from delicate, pin-drop storytelling to soaring vocal crescendos.
+            </p>
+            <ul class="pkg-list">
+              <li>Sunday Afternoon Harbour & Deck Sessions</li>
+              <li>Wedding Ceremonies & Canapés</li>
+              <li>Wineries, Boutique Bars & Listening Rooms</li>
+              <li>Acoustic Unplugged Showcases</li>
+            </ul>
+          </div>
+          <a href="#book" class="btn-gold" style="justify-content:center;">Book Intimate Duet</a>
+        </div>
+
+        <!-- Package 3: Glossy Black Key Card -->
+        <div class="package-card">
+          <div>
+            <span class="pkg-badge">Instrumental Ambience</span>
+            <h3>Solo Piano by Kyle</h3>
+            <div class="pkg-sub">Sophisticated Dinner & Cocktail Instrumental</div>
+            <p>
+              Warm, refined solo piano arrangements tailored for conversation and atmosphere. Available as a standalone booking or as a seamless prelude hour before Sammy-Jay joins for the main sets.
+            </p>
+            <ul class="pkg-list">
+              <li>Fine Dining & Resort Lobbies</li>
+              <li>VIP Corporate Dinners & Gala Arrivals</li>
+              <li>Wedding Guest Arrival & Dinner Service</li>
+              <li>Bundle Upgrade with Any Duo Package</li>
+            </ul>
+          </div>
+          <a href="#book" class="btn-white-key" style="justify-content:center;">Book Solo Piano</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Watch & Listen Live Clips (Pure White Key Section) -->
+  <section class="section-white-key" id="watch">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="eyebrow">Live from the Stage</div>
+        <h2>Watch & Listen</h2>
+        <div class="deco-line"><div class="deco-diamond"></div></div>
+        <p>Real live captures from the Unplugged Competition Finals & Semi-Finals at the Beach House Hotel, Hervey Bay.</p>
+      </div>
+
+      <div class="video-grid">
+        <div class="video-card">
+          <video controls preload="metadata" poster="assets/images/live-piano-vocal.webp">
+            <source src="assets/videos/anyone-cover.mp4" type="video/mp4" />
+          </video>
+          <div class="video-meta">
+            <span>Powerhouse Vocal Showcase</span>
+            <h4>"Anyone" (Demi Lovato Cover)</h4>
+            <p>Recorded live at the Beach House Unplugged Grand Finals 2026.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <video controls preload="metadata" poster="assets/images/live-guitar-vocal.webp">
+            <source src="assets/videos/teenage-dirtbag.mp4" type="video/mp4" />
+          </video>
+          <div class="video-meta">
+            <span>Reimagined "A Soft Focus Style"</span>
+            <h4>"Teenage Dirtbag" (Reimagined)</h4>
+            <p>Our theatrical, slow-burn harmonic arrangement from the Unplugged Finals.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <video controls preload="metadata" poster="assets/images/theatre-seats-duo.jpg">
+            <source src="assets/videos/what-was-i-made-for.mp4" type="video/mp4" />
+          </video>
+          <div class="video-meta">
+            <span>Intimate Piano & Voice</span>
+            <h4>"What Was I Made For?"</h4>
+            <p>Delicate, pin-drop emotional delivery from the Unplugged Semi-Finals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Kyle & Sammy-Jay (Piano Black Section with Black & White Contrast Cards) -->
+  <section class="section-black-key" id="about">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="eyebrow">The Story Behind the Music</div>
+        <h2>Meet Sammy-Jay & Kyle</h2>
+        <div class="deco-line"><div class="deco-diamond"></div></div>
+        <p>A real-life couple who met in a theatre rehearsal room in February 2024 and haven't stopped making music together since.</p>
+      </div>
+
+      <div class="bio-grid">
+        <!-- Sammy Card: Pure White Key Style -->
+        <div class="bio-card ivory-bio">
+          <img src="assets/images/sammy-portrait.webp" alt="Sammy-Jay - Vocalist of A Soft Focus" />
+          <div class="bio-content">
+            <span class="role">The Singer • Vocals & Storytelling</span>
+            <h3>Sammy-Jay</h3>
+            <p>
+              Originally from the United Kingdom and calling Australia home for the past three years, Sammy-Jay is a powerhouse vocalist, international performer, and passionate Drama & Film teacher in Hervey Bay.
+            </p>
+            <p>
+              Equally at home delivering roof-raising anthems or whisper-soft acoustic storytelling, she is also a familiar face on the Z-Pac Theatre and Brolga Theatre stages.
+            </p>
+          </div>
+        </div>
+
+        <!-- Kyle Card: Glossy Black Key Style -->
+        <div class="bio-card">
+          <img src="assets/images/kyle-portrait.webp" alt="Kyle - Pianist and Multi-Instrumentalist of A Soft Focus" />
+          <div class="bio-content">
+            <span class="role">The Piano Man • Keys, Guitar & Sound</span>
+            <h3>Kyle</h3>
+            <p>
+              Originally from Canada and a proud Australian citizen after 17+ years down under, Kyle is a versatile multi-instrumentalist across piano, keys, acoustic guitar, and drums.
+            </p>
+            <p>
+              Also an accomplished theatre technician and designer at Z-Pac Theatre, Kyle brings crystal-clear live sound engineering, rich musical arrangements, and effortless solo piano elegance to every gig.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent & Upcoming Gigs (Pure White Key Section with Alternating Black/White Rows) -->
+  <section class="section-white-key" id="gigs">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="eyebrow">Where You've Seen Us</div>
+        <h2>Recent Shows & Milestones</h2>
+        <div class="deco-line"><div class="deco-diamond"></div></div>
+        <p>Performing regularly across Hervey Bay, Maryborough, the Fraser Coast, and select destination events.</p>
+      </div>
+
+      <div class="gigs-table">
+        <div class="gig-row">
+          <div class="gig-date">Oct 2026</div>
+          <div class="gig-venue">
+            <strong>What's On Fraser Coast Magazine (Issue 109)</strong>
+            <span>Region-Wide Print & Digital Feature</span>
+          </div>
+          <div class="gig-type">Front Cover & 2-Page Feature Interview</div>
+          <span class="gig-badge">Out Now</span>
+        </div>
+        <div class="gig-row">
+          <div class="gig-date">17 Sep 2026</div>
+          <div class="gig-venue">
+            <strong>Beach House Hotel</strong>
+            <span>Scarness, Hervey Bay</span>
+          </div>
+          <div class="gig-type">Unplugged Competition — Grand Finals</div>
+          <span class="gig-badge">Grand Finalists</span>
+        </div>
+        <div class="gig-row">
+          <div class="gig-date">13 Sep 2026</div>
+          <div class="gig-venue">
+            <strong>Hervey Bay Boat Club</strong>
+            <span>Urangan Harbour, Hervey Bay</span>
+          </div>
+          <div class="gig-type">Sunday Afternoon Harbour Session (2:00 PM)</div>
+          <span class="gig-badge">Venue Residency</span>
+        </div>
+        <div class="gig-row">
+          <div class="gig-date">12 Sep 2026</div>
+          <div class="gig-venue">
+            <strong>8-Bit Bar</strong>
+            <span>Torquay, Hervey Bay</span>
+          </div>
+          <div class="gig-type">Saturday Night Crowd Set (8:30 PM)</div>
+          <span class="gig-badge">Full Duo + Tracks</span>
+        </div>
+        <div class="gig-row">
+          <div class="gig-date">29 Aug 2026</div>
+          <div class="gig-venue">
+            <strong>Hervey Bay Whale Festival</strong>
+            <span>Seafront Oval Stage, Hervey Bay</span>
+          </div>
+          <div class="gig-type">Main Festival Afternoon Showcase</div>
+          <span class="gig-badge">Festival Stage</span>
+        </div>
+        <div class="gig-row">
+          <div class="gig-date">22 Aug 2026</div>
+          <div class="gig-venue">
+            <strong>The Bayswater Bar & Grill</strong>
+            <span>Urangan, Hervey Bay</span>
+          </div>
+          <div class="gig-type">Saturday Evening Live Session (6:00 – 10:00 PM)</div>
+          <span class="gig-badge">Coastal Venue</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Piano Keys Motif Divider -->
+  <div class="piano-keys-divider"></div>
+
+  <!-- Booking & Direct Enquiry (Glossy Piano Black w/ Crisp White Form Card) -->
+  <section class="section-black-key" id="book">
+    <div class="section-inner">
+      <div class="booking-box">
+        <div>
+          <div class="eyebrow" style="color:var(--gold-bright); text-transform:uppercase; letter-spacing:0.14em; font-size:0.78rem; font-weight:700; margin-bottom:8px;">Check Availability</div>
+          <h2 style="font-family:var(--font-serif); font-size:2.5rem; line-height:1.12; margin-bottom:16px;">Book A Soft Focus for Your Venue, Wedding or Event</h2>
+          <p style="color:#cccccc; margin-bottom:26px; font-size:0.96rem;">
+            We are fully self-contained with professional PA, lighting, and wireless microphones. Based in Hervey Bay, we regularly perform across the Fraser Coast and take weekend/holiday bookings across Bundaberg, K'gari, Gympie, and the Sunshine Coast.
+          </p>
+          <div style="display:grid; gap:14px; font-size:0.95rem; background:#050505; padding:22px; border-radius:12px; border:1px solid var(--gold-border);">
+            <div><strong style="color:var(--gold-bright);">Bookings Email:</strong> <a href="mailto:bookings@asoftfocus.com" style="color:var(--pure-white); font-weight:600;">bookings@asoftfocus.com</a></div>
+            <div><strong style="color:var(--gold-bright);">General Enquiries:</strong> <a href="mailto:info@asoftfocus.com" style="color:var(--pure-white);">info@asoftfocus.com</a></div>
+            <div><strong style="color:var(--gold-bright);">Instagram:</strong> <a href="https://www.instagram.com/asoftfocusband/" target="_blank" style="color:var(--pure-white);">@asoftfocusband</a></div>
+            <div><strong style="color:var(--gold-bright);">Live Stream:</strong> <a href="https://www.twitch.tv/a_soft_focus" target="_blank" style="color:var(--pure-white);">twitch.tv/a_soft_focus</a></div>
+          </div>
+        </div>
+
+        <form class="booking-form" id="bookingForm" action="https://formsubmit.co/bookings@asoftfocus.com" method="POST">
+          <input type="hidden" name="_subject" id="formSubject" value="New Booking Enquiry — A Soft Focus Website" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="form-row">
+            <div>
+              <label for="bookingName">Your Name / Venue</label>
+              <input type="text" id="bookingName" name="Name_or_Venue" placeholder="e.g. Sarah / The Boat Club" required />
+            </div>
+            <div>
+              <label for="bookingContact">Email or Phone</label>
+              <input type="text" id="bookingContact" name="Contact_Details" placeholder="you@example.com / 0400..." required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="bookingPackage">Preferred Package</label>
+              <select id="bookingPackage" name="Preferred_Package">
+                <option value="Full Duo + JamZone Backing Tracks (Upbeat)">Full Duo + JamZone Backing Tracks (Upbeat)</option>
+                <option value="Intimate Acoustic Duet (Piano/Guitar + Voice)">Intimate Acoustic Duet (Piano/Guitar + Voice)</option>
+                <option value="Solo Piano by Kyle (Dinner / Ambience)">Solo Piano by Kyle (Dinner / Ambience)</option>
+                <option value="Combo Package (Solo Piano + Full Duo)">Combo Package (Solo Piano + Full Duo)</option>
+              </select>
+            </div>
+            <div>
+              <label for="bookingDate">Event Date & Location</label>
+              <input type="text" id="bookingDate" name="Event_Date_and_Location" placeholder="e.g. Sat 14 Nov • Hervey Bay" required />
+            </div>
+          </div>
+          <div>
+            <label for="bookingNotes">Tell Us About Your Gig or Event</label>
+            <textarea id="bookingNotes" name="Event_Details" placeholder="Set times, vibe, special song requests, or questions..."></textarea>
+          </div>
+          <button type="submit" id="bookingSubmitBtn" class="btn-gold" style="justify-content:center; padding:14px;">Send to bookings@asoftfocus.com ✦</button>
+          <p id="bookingStatus" style="font-size:0.82rem; text-align:center; color:#444; margin-top:4px;">Sends directly to <strong>bookings@asoftfocus.com</strong> — we typically reply within 24 hours.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      const form = document.getElementById('bookingForm');
+      if (!form) return;
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('bookingSubmitBtn');
+        const status = document.getElementById('bookingStatus');
+        const name = document.getElementById('bookingName').value.trim();
+        const contact = document.getElementById('bookingContact').value.trim();
+        const pkg = document.getElementById('bookingPackage').value;
+        const dateLoc = document.getElementById('bookingDate').value.trim();
+        const notes = document.getElementById('bookingNotes').value.trim();
+
+        const subject = `Booking Enquiry: ${name} (${dateLoc || 'Date TBC'}) — A Soft Focus`;
+        document.getElementById('formSubject').value = subject;
+
+        const originalBtnText = btn.textContent;
+        btn.textContent = 'Sending Enquiry...';
+        btn.disabled = true;
+
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/bookings@asoftfocus.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              _subject: subject,
+              Name_or_Venue: name,
+              Contact_Details: contact,
+              Preferred_Package: pkg,
+              Event_Date_and_Location: dateLoc,
+              Event_Details: notes
+            })
+          });
+          const data = await response.json();
+          if (response.ok && (data.success === 'true' || data.success === true)) {
+            btn.textContent = 'Enquiry Sent to bookings@asoftfocus.com ✓';
+            status.innerHTML = '<strong style="color:#1b6e2b;">Thank you! Your enquiry has been sent to bookings@asoftfocus.com.</strong>';
+            form.reset();
+            return;
+          }
+          throw new Error('Fallback to mailto');
+        } catch (err) {
+          const bodyLines = [
+            `Hi Kyle & Sammy-Jay (A Soft Focus),`,
+            ``,
+            `Name / Venue: ${name}`,
+            `Contact Details: ${contact}`,
+            `Preferred Package: ${pkg}`,
+            `Event Date & Location: ${dateLoc}`,
+            ``,
+            `Event Details / Notes:`,
+            notes || '(None provided)'
+          ];
+          const mailtoUrl = `mailto:bookings@asoftfocus.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+          window.location.href = mailtoUrl;
+          btn.textContent = 'Opened in Your Email App ✦';
+          status.innerHTML = 'Your email client has opened addressed to <strong>bookings@asoftfocus.com</strong> — just hit Send!';
+          setTimeout(() => {
+            btn.textContent = originalBtnText;
+            btn.disabled = false;
+          }, 4000);
+        }
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>© 2026 A Soft Focus (Kyle & Sammy-Jay). Based in Hervey Bay, Fraser Coast, Queensland. • Bookings: <a href="mailto:bookings@asoftfocus.com" style="color:var(--gold-bright); text-decoration:none; font-weight:600;">bookings@asoftfocus.com</a></p>
+  </footer>
+
+</body>
+</html>
