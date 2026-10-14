@@ -2,3 +2,5 @@
 ._*
 *.log
 .wrangler/
+__pycache__/
+*.pyc
