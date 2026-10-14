@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//A Soft Focus//Gigs//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2027-08-22-beach-house-hotel-sunday-sesh@asoftfocus.com
+DTSTAMP:20261014T195459Z
+DTSTART:20270822T040000Z
+DTEND:20270822T080000Z
+SUMMARY:A Soft Focus — Sunday Sesh at Beach House Hotel
+LOCATION:Beach House Hotel\, 344 Esplanade\, Scarness QLD 4655
+DESCRIPTION:A Soft Focus live at Beach House Hotel. Directions: https://w
+ ww.google.com/maps/search/?api=1&query=Beach%20House%20Hotel%2C%20344%20E
+ splanade%2C%20Scarness%20QLD%204655
+URL:https://asoftfocus.com/
+END:VEVENT
+END:VCALENDAR

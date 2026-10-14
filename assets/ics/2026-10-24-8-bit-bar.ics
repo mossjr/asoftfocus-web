@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//A Soft Focus//Gigs//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2026-10-24-8-bit-bar@asoftfocus.com
+DTSTAMP:20261014T195459Z
+DTSTART:20261024T100000Z
+DTEND:20261024T133000Z
+SUMMARY:A Soft Focus Live at 8-Bit Bar
+LOCATION:8-Bit Bar\, 1/352 Esplanade\, Scarness QLD 4655
+DESCRIPTION:A Soft Focus live at 8-Bit Bar. Directions: https://www.googl
+ e.com/maps/search/?api=1&query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20
+ Scarness%20QLD%204655
+URL:https://asoftfocus.com/
+END:VEVENT
+END:VCALENDAR

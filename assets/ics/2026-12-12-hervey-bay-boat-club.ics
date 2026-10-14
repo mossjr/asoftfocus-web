@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//A Soft Focus//Gigs//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2026-12-12-hervey-bay-boat-club@asoftfocus.com
+DTSTAMP:20261014T195459Z
+DTSTART:20261212T080000Z
+DTEND:20261212T120000Z
+SUMMARY:A Soft Focus Live at Hervey Bay Boat Club
+LOCATION:Hervey Bay Boat Club\, Buccaneer Dr\, Urangan QLD 4655
+DESCRIPTION:A Soft Focus live at Hervey Bay Boat Club. Directions: https:
+ //www.google.com/maps/search/?api=1&query=Hervey%20Bay%20Boat%20Club%2C%2
+ 0Buccaneer%20Dr%2C%20Urangan%20QLD%204655
+URL:https://asoftfocus.com/
+END:VEVENT
+END:VCALENDAR
