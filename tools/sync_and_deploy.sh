@@ -13,7 +13,7 @@ SITE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$SITE_DIR"
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 
-GENERATED=(assets/images/venues index.html assets/ics)
+GENERATED=(assets/images/venues index.html weddings.html private-events.html assets/ics)
 
 python3 tools/sync_venue_photos.py
 python3 tools/prerender_gigs.py

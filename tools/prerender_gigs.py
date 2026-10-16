@@ -229,11 +229,87 @@ def ics_text(g, stamp):
     return "\r\n".join(fold(l) for l in lines) + "\r\n"
 
 
-def replace_block(doc, name, content):
+def replace_block(doc, name, content, fname="index.html"):
     pattern = re.compile(r"(<!-- GIGS:%s:START -->)(.*?)(<!-- GIGS:%s:END -->)" % (name, name), re.S)
     if not pattern.search(doc):
-        raise SystemExit(f"marker GIGS:{name} not found in index.html")
+        raise SystemExit(f"marker GIGS:{name} not found in {fname}")
     return pattern.sub(lambda m: m.group(1) + content + m.group(3), doc)
+
+
+# ---------------------------------------------------------------- Google reviews
+# Markup must stay in sync with assets/js/reviews.js. No Review/AggregateRating JSON-LD on purpose:
+# Google treats review markup a business adds about itself as self-serving (against its guidelines).
+GOOGLE_LISTING = "https://www.google.com/maps?cid=11276664409404347226"
+REVIEW_LINK = "https://g.page/r/CVoT1rWIwn6cEBM/review"
+REVIEW_PAGES = {"weddings.html": ["Wedding"], "private-events.html": ["Private party"]}
+
+
+def sorted_reviews(data):
+    revs = [r for r in data.get("reviews", []) if r.get("text")]
+    # Newest first; equal dates keep their order in gigs-data.json.
+    return sorted(revs, key=lambda r: r.get("date", ""), reverse=True)
+
+
+def stars(r):
+    n = max(0, min(5, int(r.get("rating", 5))))
+    return "★" * n + "☆" * (5 - n)
+
+
+def attribution(r):
+    bits = [r.get("author_display", "")]
+    tail = " · ".join(x for x in [r.get("event_type"), f"{r.get('source', 'Google')} review"] if x)
+    return f"— {', '.join(b for b in bits if b)}, {tail}" if bits[0] else f"— {tail}"
+
+
+def review_slide_html(r, i, n):
+    return (
+        f'<figure class="hr-slide is-active" role="group" aria-roledescription="slide" aria-label="Review {i + 1} of {n}">'
+        f'<div class="hr-stars" role="img" aria-label="{int(r.get("rating", 5))} out of 5 stars on {e(r.get("source", "Google"))}">{stars(r)}</div>'
+        f'<blockquote><a href="{GOOGLE_LISTING}" target="_blank" rel="noopener">“{e(r["text"])}”</a></blockquote>'
+        f'<figcaption>{e(attribution(r))}</figcaption></figure>'
+    )
+
+
+def hero_reviews_html(revs):
+    if not revs:
+        return ""
+    return (f'<div class="hr-track" aria-live="polite">{review_slide_html(revs[0], 0, len(revs))}</div>'
+            f'<div class="hr-foot"><div class="hr-controls" hidden></div>'
+            f'<a class="hr-leave" href="{REVIEW_LINK}" target="_blank" rel="noopener">Leave us a review ↗</a></div>')
+
+
+def review_card_html(r):
+    return (
+        '<figure class="review-card">'
+        f'<div class="review-stars" role="img" aria-label="{int(r.get("rating", 5))} out of 5 stars on {e(r.get("source", "Google"))}">{stars(r)}</div>'
+        f'<blockquote>“{e(r["text"])}”</blockquote>'
+        f'<figcaption>{e(attribution(r))}</figcaption>'
+        f'<a class="review-source" href="{GOOGLE_LISTING}" target="_blank" rel="noopener">Read on Google ↗</a>'
+        '</figure>'
+    )
+
+
+def page_review_html(r):
+    # Landing pages have their own (inline-styled) CSS; keep this self-contained.
+    return (
+        '<figure style="margin:0 0 22px; padding-bottom:20px; border-bottom:1px solid rgba(212,175,55,0.35);">'
+        f'<div role="img" aria-label="{int(r.get("rating", 5))} out of 5 stars on {e(r.get("source", "Google"))}" '
+        f'style="color:var(--gold-bright); letter-spacing:0.12em; font-size:1rem; margin-bottom:8px;">{stars(r)}</div>'
+        f'<blockquote style="margin:0 0 8px; font-family:var(--font-serif); font-style:italic; font-size:1.12rem; line-height:1.5; color:#fff;">'
+        f'<a href="{GOOGLE_LISTING}" target="_blank" rel="noopener" style="color:inherit; text-decoration:none;">“{e(r["text"])}”</a></blockquote>'
+        f'<figcaption style="font-size:0.82rem; color:#bbb;">{e(attribution(r))}</figcaption></figure>'
+    )
+
+
+def render_reviews(data):
+    revs = sorted_reviews(data)
+    for fname, types in REVIEW_PAGES.items():
+        p = os.path.join(SITE_DIR, fname)
+        doc = open(p, encoding="utf-8").read()
+        new = replace_block(doc, "REVIEWS_PAGE", "".join(page_review_html(r) for r in revs if r.get("event_type") in types), fname)
+        if new != doc:
+            open(p, "w", encoding="utf-8").write(new)
+    return revs
 
 
 def main():
@@ -275,8 +351,11 @@ def main():
     doc = replace_block(doc, "UPCOMING", "".join(row_html(g) for g in upcoming))
     ld = json.dumps([event_ld(g) for g in upcoming], ensure_ascii=False, indent=2).replace("</", "<\\/")
     doc = replace_block(doc, "JSONLD", f'<script type="application/ld+json" id="gigsJsonLd">{ld}</script>')
+    revs = render_reviews(data)
+    doc = replace_block(doc, "REVIEWS_HERO", hero_reviews_html(revs))
+    doc = replace_block(doc, "REVIEWS_CARDS", "".join(review_card_html(r) for r in revs))
     open(path, "w", encoding="utf-8").write(doc)
-    print(f"Rendered {len(upcoming)} upcoming gig(s); next: {upcoming[0]['id'] if upcoming else 'none'}")
+    print(f"Rendered {len(upcoming)} upcoming gig(s); next: {upcoming[0]['id'] if upcoming else 'none'}; {len(revs)} review(s)")
 
 
 if __name__ == "__main__":

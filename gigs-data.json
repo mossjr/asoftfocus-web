@@ -44,6 +44,24 @@
       "issue": "Beach House Hotel, Hervey Bay • September 2026"
     }
   ],
+  "reviews": [
+    {
+      "author_display": "Dylan N.",
+      "rating": 5,
+      "text": "We booked Sammy and Kyle for a wedding for our esteemed client, they made our clients day amazing! Super happy, a soft focus duo we couldn't recommend enough! We will be having them back every time.",
+      "source": "Google",
+      "date": "2026-10-15",
+      "event_type": "Wedding"
+    },
+    {
+      "author_display": "Felicity F.",
+      "rating": 5,
+      "text": "Asked to play for a lowkey party. Perfect balance of professionalism and entertainment. Xx",
+      "source": "Google",
+      "date": "2026-10-15",
+      "event_type": "Private party"
+    }
+  ],
   "packages": [
     {
       "id": "full-duo",

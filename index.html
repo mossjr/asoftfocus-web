@@ -1282,6 +1282,42 @@
     .gig-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .gig-photo-credit { display: block; font-size: 0.7rem; opacity: 0.6; margin-top: 2px; }
 
+    /* Hero Google-review slider — deliberately quieter than the headline + Book CTA */
+    .hero-reviews { max-width: 580px; margin: -14px 0 30px; padding: 2px 0 2px 18px; border-left: 2px solid var(--gold); }
+    .hr-track { display: grid; }
+    .hr-slide { grid-area: 1 / 1; margin: 0; opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility 0s linear .6s; }
+    .hr-slide.is-active { opacity: 1; visibility: visible; transition: opacity .6s ease; }
+    .hr-stars { color: var(--gold-bright); letter-spacing: .14em; font-size: .82rem; line-height: 1; }
+    .hr-slide blockquote { margin: 6px 0 6px; font-family: var(--font-serif); font-style: italic; font-size: 1.02rem; line-height: 1.45; color: #e6e6e6; }
+    .hr-slide blockquote a { color: inherit; text-decoration: none; }
+    .hr-slide blockquote a:hover, .hr-slide blockquote a:focus-visible { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+    .hr-slide figcaption { font-size: .76rem; color: #b5b5b5; letter-spacing: .03em; }
+    .hr-foot { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; }
+    .hr-controls { display: flex; align-items: center; gap: 4px; }
+    .hr-controls[hidden] { display: none; }
+    .hr-btn { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(212,175,55,.55); background: transparent; color: var(--gold-bright); font-size: .8rem; line-height: 1; cursor: pointer; display: inline-grid; place-items: center; padding: 0; }
+    .hr-btn:hover { border-color: var(--gold); background: rgba(212,175,55,.12); }
+    .hr-dot { width: 24px; height: 24px; border: 0; background: transparent; cursor: pointer; display: inline-grid; place-items: center; padding: 0; }
+    .hr-dot::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.35); transition: background .2s, transform .2s; }
+    .hr-dot[aria-current="true"]::before { background: var(--gold); transform: scale(1.25); }
+    .hr-btn:focus-visible, .hr-dot:focus-visible, .hr-leave:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .hr-leave { font-size: .74rem; color: var(--gold-bright); text-decoration: none; letter-spacing: .04em; opacity: .85; }
+    .hr-leave:hover { opacity: 1; text-decoration: underline; }
+    @media (prefers-reduced-motion: reduce) { .hr-slide, .hr-slide.is-active, .hr-dot::before { transition: none; } }
+    @media (max-width: 600px) {
+      .hero-reviews { margin: -16px 0 24px; padding-left: 14px; }
+      .hr-slide blockquote { font-size: .95rem; }
+    }
+
+    /* Review cards in "Highlights & Reviews" */
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 28px; }
+    .review-card { margin: 0; background: var(--piano-gloss-card); border: 1px solid var(--gold); border-radius: 16px; padding: 26px 28px; display: flex; flex-direction: column; gap: 10px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); }
+    .review-stars { color: var(--gold-bright); letter-spacing: .14em; font-size: 1.05rem; }
+    .review-card blockquote { margin: 0; font-family: var(--font-serif); font-style: italic; font-size: 1.15rem; line-height: 1.5; color: var(--pure-white); flex: 1; }
+    .review-card figcaption { font-size: .84rem; color: #c4c4c4; }
+    .review-source { font-size: .78rem; color: var(--gold-bright); text-decoration: none; font-weight: 600; letter-spacing: .04em; }
+    .review-source:hover { text-decoration: underline; }
+
     @media (max-width: 960px) {
       .next-gig { grid-template-columns: 1fr; }
       .next-gig-media { min-height: 250px; border-right: none; border-bottom: 1px solid var(--gold-border); }
@@ -1348,6 +1384,8 @@
           <a href="#book" class="btn-gold">Book Your Date ✦</a>
           <a href="#watch" class="btn-white-key">▶ Watch Live Reels</a>
         </div>
+        <!-- Google reviews slider — server-rendered first review; assets/js/reviews.js builds the slider from gigs-data.json -->
+        <div class="hero-reviews" id="heroReviews" aria-roledescription="carousel" aria-label="Google reviews"><!-- GIGS:REVIEWS_HERO:START --><div class="hr-track" aria-live="polite"><figure class="hr-slide is-active" role="group" aria-roledescription="slide" aria-label="Review 1 of 2"><div class="hr-stars" role="img" aria-label="5 out of 5 stars on Google">★★★★★</div><blockquote><a href="https://www.google.com/maps?cid=11276664409404347226" target="_blank" rel="noopener">“We booked Sammy and Kyle for a wedding for our esteemed client, they made our clients day amazing! Super happy, a soft focus duo we couldn&#x27;t recommend enough! We will be having them back every time.”</a></blockquote><figcaption>— Dylan N., Wedding · Google review</figcaption></figure></div><div class="hr-foot"><div class="hr-controls" hidden></div><a class="hr-leave" href="https://g.page/r/CVoT1rWIwn6cEBM/review" target="_blank" rel="noopener">Leave us a review ↗</a></div><!-- GIGS:REVIEWS_HERO:END --></div>
         <div class="hero-stats">
           <div class="stat-item">
             <strong>3-in-1</strong>
@@ -1745,11 +1783,13 @@
   <section class="section-black-key" id="reviews" style="border-bottom:1px solid var(--gold-border);">
     <div class="section-inner">
       <div class="section-header">
-        <div class="eyebrow">Press, Competitions & Stages</div>
+        <div class="eyebrow">Google Reviews, Press & Stages</div>
         <h2>Highlights & Reviews</h2>
         <div class="deco-line"><div class="deco-diamond"></div></div>
-        <p>A few milestones from our first years performing together on the Fraser Coast.</p>
+        <p>What clients have said on Google, plus a few milestones from our first years performing together on the Fraser Coast.</p>
       </div>
+
+      <div class="reviews-grid"><!-- GIGS:REVIEWS_CARDS:START --><figure class="review-card"><div class="review-stars" role="img" aria-label="5 out of 5 stars on Google">★★★★★</div><blockquote>“We booked Sammy and Kyle for a wedding for our esteemed client, they made our clients day amazing! Super happy, a soft focus duo we couldn&#x27;t recommend enough! We will be having them back every time.”</blockquote><figcaption>— Dylan N., Wedding · Google review</figcaption><a class="review-source" href="https://www.google.com/maps?cid=11276664409404347226" target="_blank" rel="noopener">Read on Google ↗</a></figure><figure class="review-card"><div class="review-stars" role="img" aria-label="5 out of 5 stars on Google">★★★★★</div><blockquote>“Asked to play for a lowkey party. Perfect balance of professionalism and entertainment. Xx”</blockquote><figcaption>— Felicity F., Private party · Google review</figcaption><a class="review-source" href="https://www.google.com/maps?cid=11276664409404347226" target="_blank" rel="noopener">Read on Google ↗</a></figure><!-- GIGS:REVIEWS_CARDS:END --></div>
 
       <div class="packages-grid" style="margin-bottom:38px;">
         <div class="package-card">
@@ -1939,5 +1979,6 @@
   </footer>
 
   <script src="assets/js/gigs.js" defer></script>
+  <script src="assets/js/reviews.js" defer></script>
 </body>
 </html>
