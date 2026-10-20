@@ -226,6 +226,11 @@
   document.addEventListener('visibilitychange', () => {
     if (job && job.running && document.visibilityState === 'visible') keepAwake(true);
   });
+  // Phone lost signal: drop half-sent chunks now (instead of waiting minutes for a timeout);
+  // they are re-sent as soon as the connection is back.
+  window.addEventListener('offline', () => {
+    if (job && job.running) job.xhrs.forEach((x) => x.abort());
+  });
 
   // ------------------------------------------------------------ network helpers
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -312,7 +317,8 @@
         if (job.running) setStatus('Uploading…');
         return true;
       }
-      if (res.status === -1) return false; // paused / cancelled
+      if (res.status === -1 && !job.running) return false; // paused / cancelled
+      // status -1 while still running = we aborted it because the phone went offline: retry below.
       if (res.status === 403 && res.data.expired) throw Object.assign(new Error('expired'), { expired: true });
       if (res.status === 415 && res.data.notVideo) throw new Error(res.data.error);
       if (res.status >= 400 && res.status < 500 && res.status !== 408 && res.status !== 429 && !res.data.retry) {
