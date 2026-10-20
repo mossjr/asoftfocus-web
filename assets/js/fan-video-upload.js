@@ -288,7 +288,7 @@
     const [t0, b0] = job.samples[0];
     const rate = now - t0 > 1500 ? ((sent - b0) / (now - t0)) * 1000 : 0;
     const eta = rate > 0 ? (job.file.size - sent) / rate : NaN;
-    els.detail.textContent = `${fmtBytes(sent)} of ${fmtBytes(job.file.size)}${rate > 0 ? ' · ' + fmtTime(eta) : ''}`;
+    els.detail.textContent = `${fmtBytes(sent)} of ${fmtBytes(job.file.size)}${rate > 0 && fmtTime(eta) ? ' · ' + fmtTime(eta) : ''}`;
   }
 
   async function uploadChunk(n) {
@@ -308,7 +308,7 @@
         job.doneBytes.set(n, blob.size);
         saveResume(job.fp, rec);
         renderProgress();
-        if (job.running) setStatus('Uploading… keep this page open until it says done.');
+        if (job.running) setStatus('Uploading…');
         return true;
       }
       if (res.status === -1) return false; // paused / cancelled
@@ -330,7 +330,7 @@
     job.running = true;
     els.pauseBtn.textContent = 'Pause';
     keepAwake(true);
-    setStatus('Uploading… keep this page open until it says done.');
+    setStatus('Uploading…');
     const todo = [];
     for (let n = 1; n <= job.rec.partCount; n += 1) if (!job.rec.parts[n]) todo.push(n);
 
@@ -517,6 +517,11 @@
 
   els.gig.addEventListener('change', toggleOther);
   els.file.addEventListener('change', onFileChosen);
+  // Clear a field's error as soon as the fan fixes it; tidy an Instagram "@" typed by the fan.
+  form.addEventListener('input', (e) => { if (e.target.name) setFieldError(e.target.name, ''); });
+  form.addEventListener('change', (e) => { if (e.target.name && e.target.name !== 'video') setFieldError(e.target.name, ''); });
+  const ig = form.querySelector('#instagram');
+  ig.addEventListener('input', () => { if (ig.value.startsWith('@')) ig.value = ig.value.replace(/^@+/, ''); });
   els.pauseBtn.addEventListener('click', onPause);
   els.cancelBtn.addEventListener('click', onCancel);
   els.another.addEventListener('click', onAnother);
