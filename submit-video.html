@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Submit Your Video | A Soft Focus — Live Piano & Vocal Duo, Hervey Bay</title>
+  <meta name="description" content="Filmed A Soft Focus live? Send us your clip straight from your phone. No app, no account. If we use it in a compilation, we'll tag you." />
+  <!-- Hidden page: not linked from the site and not indexed until Kyle approves launch. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/logos/logo-white.svg" />
+  <link rel="alternate icon" type="image/jpeg" href="assets/logos/logo-gold-black.jpg" />
+  <link rel="apple-touch-icon" href="assets/logos/logo-gold-black.jpg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="A Soft Focus" />
+  <meta property="og:title" content="Filmed us live? Send us your video | A Soft Focus" />
+  <meta property="og:description" content="Upload your clip from your phone in one tap. No app, no account. We'll tag you if we use it." />
+  <meta property="og:image" content="https://asoftfocus.com/assets/images/hero-duo-velvet.webp" />
+  <meta property="og:locale" content="en_AU" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+  <style>
+    :root {
+      --piano-black: #000000;
+      --piano-lacquer: linear-gradient(145deg, #181818 0%, #050505 42%, #000000 50%, #0c0c0c 100%);
+      --piano-gloss-card: linear-gradient(160deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.02) 32%, rgba(0,0,0,0.98) 32.5%, #040404 100%);
+      --pure-white: #ffffff;
+      --gold: #d4af37;
+      --gold-bright: #f3d478;
+      --gold-deep: #9e7a1c;
+      --gold-metallic: linear-gradient(135deg, #f5dc8c 0%, #d4af37 50%, #9e7a1c 100%);
+      --gold-border: rgba(212, 175, 55, 0.45);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --error: #b3261e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--piano-black); color: var(--pure-white); font-family: var(--font-sans); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { line-height: 1.6; overflow-x: hidden; background: var(--piano-black); }
+    [hidden] { display: none !important; }
+
+    .piano-keys-divider {
+      height: 14px; width: 100%;
+      background: repeating-linear-gradient(90deg, #ffffff 0px, #ffffff 28px, #000000 28px, #000000 30px, #ffffff 30px, #ffffff 44px, #000000 44px, #000000 58px, #ffffff 58px, #ffffff 72px, #000000 72px, #000000 86px, #ffffff 86px, #ffffff 114px, #000000 114px, #000000 116px);
+      border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+    }
+
+    header.navbar {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 6%;
+      background: linear-gradient(180deg, #1c1c1c 0%, #060606 48%, #000000 52%, #000000 100%);
+      border-bottom: 1px solid var(--gold-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    }
+    .brand-lockup { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--pure-white); }
+    .brand-lockup img { height: 42px; border-radius: 6px; border: 1px solid var(--gold); }
+    .brand-lockup span { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .brand-lockup span em { color: var(--gold-bright); font-style: normal; }
+
+    .preview-banner {
+      background: #fff4cc; color: #3d2f00; border-bottom: 2px solid var(--gold);
+      padding: 10px 6%; font-size: 0.85rem; font-weight: 600; text-align: center;
+    }
+
+    .hero { max-width: 760px; margin: 0 auto; padding: 48px 6% 28px; text-align: center; }
+    .badge {
+      display: inline-block; padding: 6px 16px; border: 1px solid var(--gold);
+      border-radius: 999px; color: var(--gold-bright); font-size: 0.76rem;
+      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 18px;
+    }
+    h1 { font-family: var(--font-serif); font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: 1.06; margin-bottom: 16px; }
+    h1 em { color: var(--gold-bright); font-style: italic; font-weight: 400; }
+    .lede { font-size: 1.05rem; color: #dedede; max-width: 560px; margin: 0 auto; }
+    .steps { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+    .steps span { font-size: 0.78rem; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--gold); color: var(--gold-bright); }
+
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 5% 64px; }
+
+    .card-white {
+      background: var(--pure-white); color: var(--piano-black);
+      border: 2px solid var(--piano-black); border-top: 6px solid var(--gold);
+      border-radius: 16px; padding: 28px 24px; box-shadow: 10px 10px 0px var(--gold);
+    }
+    .card-gloss {
+      background: var(--piano-gloss-card); border: 1px solid var(--gold);
+      border-top: 4px solid var(--gold); border-radius: 14px; padding: 26px 24px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.22);
+    }
+
+    .field { margin-bottom: 18px; }
+    .field label, .field .label { display: block; font-weight: 700; font-size: 0.92rem; margin-bottom: 6px; }
+    .field .hint { display: block; font-size: 0.8rem; color: #555; margin-top: -2px; margin-bottom: 6px; font-weight: 400; }
+    .opt { font-weight: 400; color: #777; font-size: 0.82rem; }
+    input[type="text"], input[type="email"], input[type="date"], select {
+      width: 100%; font: inherit; font-size: 16px; /* 16px stops iOS zooming */
+      padding: 13px 14px; border: 1.5px solid #222; border-radius: 10px; background: #fff; color: #000;
+      appearance: none; -webkit-appearance: none;
+    }
+    select {
+      background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
+      background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%;
+      background-size: 6px 6px; background-repeat: no-repeat; padding-right: 40px;
+    }
+    input:focus, select:focus { outline: 3px solid var(--gold); outline-offset: 1px; border-color: #000; }
+    [aria-invalid="true"] { border-color: var(--error) !important; }
+    .prefix-wrap { position: relative; }
+    .prefix-wrap .prefix { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #666; font-weight: 600; }
+    .prefix-wrap input { padding-left: 32px; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .other-fields { border-left: 3px solid var(--gold); padding-left: 14px; margin: -4px 0 18px; }
+
+    .file-drop {
+      position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+      border: 2px dashed #000; border-radius: 14px; padding: 26px 16px; text-align: center;
+      background: linear-gradient(180deg, #fffdf5, #fff); cursor: pointer;
+    }
+    .file-drop:focus-within { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .file-drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+    .file-drop .big { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; }
+    .file-drop .chosen { font-size: 0.85rem; color: #444; word-break: break-all; }
+
+    .consent {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: #faf6e8; border: 1px solid var(--gold); border-radius: 12px; padding: 14px;
+      font-size: 0.86rem; line-height: 1.5;
+    }
+    .consent input { width: 24px; height: 24px; flex: 0 0 24px; margin-top: 2px; accent-color: #000; }
+    .draft-tag {
+      display: inline-block; background: #000; color: var(--gold-bright); font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; margin-bottom: 4px;
+    }
+
+    .err { color: var(--error); font-size: 0.82rem; margin-top: 5px; font-weight: 600; }
+    .form-error {
+      background: #fdecea; color: var(--error); border: 1px solid var(--error); border-radius: 10px;
+      padding: 12px 14px; margin-bottom: 16px; font-weight: 600; font-size: 0.9rem;
+    }
+    .closed { background: #fff; color: #000; border-radius: 12px; padding: 14px; margin-bottom: 16px; border: 2px solid var(--gold); font-weight: 600; }
+
+    .hp { position: absolute !important; left: -10000px !important; width: 1px; height: 1px; overflow: hidden; }
+
+    #turnstileBox { margin: 6px 0 16px; min-height: 66px; }
+
+    .btn-gold {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+      background: var(--gold-metallic); color: #000 !important;
+      font: inherit; font-weight: 700; padding: 16px 24px; border-radius: 999px;
+      font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; border: none; cursor: pointer;
+      box-shadow: 0 4px 22px rgba(212, 175, 55, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+    }
+    .btn-gold:disabled { opacity: 0.55; cursor: not-allowed; }
+    .btn-black-key {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--piano-lacquer); color: var(--pure-white) !important;
+      border: 1px solid var(--gold); font: inherit; font-weight: 700;
+      padding: 12px 22px; border-radius: 999px; text-decoration: none; cursor: pointer;
+      font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .btn-plain { background: none; border: none; color: #555; font: inherit; font-size: 0.85rem; text-decoration: underline; cursor: pointer; padding: 10px; }
+
+    .progress-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+    .progress-head h2 { font-family: var(--font-serif); font-size: 1.9rem; }
+    .progress-pct { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: var(--gold-deep); }
+    .bar { height: 18px; background: #eee; border: 1.5px solid #000; border-radius: 999px; overflow: hidden; }
+    .bar-fill { height: 100%; width: 0; background: var(--gold-metallic); transition: width 0.3s ease; }
+    .progress-detail { margin-top: 10px; font-weight: 600; }
+    .progress-status { margin-top: 6px; font-size: 0.88rem; color: #333; min-height: 2.6em; }
+    .progress-actions { display: flex; gap: 12px; align-items: center; margin-top: 14px; flex-wrap: wrap; }
+
+    .success { text-align: center; }
+    .success h2 { font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 8px; }
+    .success p { margin-bottom: 14px; }
+
+    .privacy { margin-top: 40px; }
+    .privacy h2 { font-family: var(--font-serif); font-size: 1.9rem; margin-bottom: 4px; }
+    .privacy .sub { color: var(--gold-bright); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .privacy ul { list-style: none; margin-top: 14px; }
+    .privacy li { padding: 7px 0 7px 22px; position: relative; color: #e4e4e4; font-size: 0.9rem; border-bottom: 1px solid rgba(212,175,55,0.15); }
+    .privacy li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); }
+    .privacy strong { color: #fff; }
+    .privacy a { color: var(--gold-bright); }
+
+    footer { text-align: center; padding: 40px 6%; background: #000; border-top: 1px solid var(--gold-border); color: #b5b5b5; font-size: 0.86rem; }
+    footer a { color: var(--gold-bright); text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 560px) {
+      .row-2 { grid-template-columns: 1fr; }
+      .brand-lockup span { font-size: 1.15rem; }
+      .card-white { box-shadow: 6px 6px 0 var(--gold); padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="brand-lockup">
+      <img src="assets/logos/logo-gold-black.jpg" alt="A Soft Focus Logo" />
+      <span>A Soft <em>Focus</em></span>
+    </a>
+  </header>
+
+  <div id="previewBanner" class="preview-banner" role="status" hidden></div>
+
+  <section class="hero">
+    <span class="badge">✦ Fan Footage</span>
+    <h1>Filmed us live? <em>Send us your video.</em></h1>
+    <p class="lede">Upload your clip straight from your phone. There's no app to install and no account needed. If we use it in a compilation, we'll tag you.</p>
+    <div class="steps" aria-hidden="true">
+      <span>1 · Your details</span><span>2 · Pick the video</span><span>3 · Send</span>
+    </div>
+  </section>
+
+  <div class="piano-keys-divider"></div>
+
+  <main class="wrap" style="padding-top:36px;">
+
+    <form id="fanVideoForm" class="card-white" novalidate>
+      <div id="uploadsClosed" class="closed" hidden>Video submissions aren't open yet. Please check back soon!</div>
+      <div id="formError" class="form-error" role="alert" hidden></div>
+
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" maxlength="80" required />
+        <div class="err" data-error-for="name" hidden></div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="instagram">Instagram <span class="opt">(optional)</span></label>
+          <div class="prefix-wrap">
+            <span class="prefix">@</span>
+            <input type="text" id="instagram" name="instagram" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="60" placeholder="yourhandle" />
+          </div>
+          <div class="err" data-error-for="instagram" hidden></div>
+        </div>
+        <div class="field">
+          <label for="facebook">Facebook <span class="opt">(optional)</span></label>
+          <input type="text" id="facebook" name="facebook" autocomplete="off" maxlength="100" placeholder="Name or profile name" />
+          <div class="err" data-error-for="facebook" hidden></div>
+        </div>
+      </div>
+      <p class="hint" style="margin:-8px 0 16px; font-size:0.8rem; color:#555;">Add a handle so we can tag you if we use your clip.</p>
+
+      <div class="field">
+        <label for="email">Email <span class="opt">(optional, only so we can say thanks or ask before using it)</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" inputmode="email" maxlength="120" />
+        <div class="err" data-error-for="email" hidden></div>
+      </div>
+
+      <div class="field">
+        <label for="gigId">Which gig did you film?</label>
+        <select id="gigId" name="gigId" required>
+          <option value="" disabled selected>Choose the gig…</option>
+        </select>
+        <div class="err" data-error-for="gigId" hidden></div>
+      </div>
+
+      <div id="otherGigFields" class="other-fields" hidden>
+        <div class="row-2">
+          <div class="field">
+            <label for="otherVenue">Venue or event</label>
+            <input type="text" id="otherVenue" name="otherVenue" maxlength="80" />
+            <div class="err" data-error-for="otherVenue" hidden></div>
+          </div>
+          <div class="field">
+            <label for="otherDate">Date <span class="opt">(roughly is fine)</span></label>
+            <input type="date" id="otherDate" name="otherDate" />
+            <div class="err" data-error-for="otherDate" hidden></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="label">Your video</span>
+        <label class="file-drop" for="videoFile">
+          <span class="big">Tap to choose your video</span>
+          <span style="font-size:0.82rem; color:#555;">Full quality is great: 4K and big files up to 4 GB are fine</span>
+          <span id="fileChosen" class="chosen">No video chosen yet</span>
+          <input type="file" id="videoFile" name="video" accept="video/*,.mov,.mp4,.m4v" />
+        </label>
+        <div class="err" data-error-for="video" hidden></div>
+      </div>
+
+      <!-- PLACEHOLDER consent wording. Final wording to be approved by Kyle (and possibly checked by Sophie or a lawyer). -->
+      <div class="field">
+        <label class="consent" for="consent">
+          <input type="checkbox" id="consent" name="consent" value="yes" required />
+          <span>
+            <span class="draft-tag">Draft wording, not final</span><br />
+            I filmed this video myself, and I'm 18 or over (or I have a parent or guardian's permission).
+            I give A Soft Focus permission to use, edit and share this video, or parts of it, on its website and social media,
+            and to credit and tag me using the details above. I still own my video, and I can ask for it to be removed at any time
+            by emailing <a href="mailto:bookings@asoftfocus.com">bookings@asoftfocus.com</a>.
+          </span>
+        </label>
+        <div class="err" data-error-for="consent" hidden></div>
+      </div>
+      <input type="hidden" id="consentVersion" name="consentVersion" value="" />
+
+      <!-- Honeypot: hidden from people, bots tend to fill it in. -->
+      <div class="hp" aria-hidden="true">
+        <label for="website">Leave this empty</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <div id="turnstileBox"></div>
+
+      <button type="submit" id="submitBtn" class="btn-gold">Send my video ✦</button>
+      <p style="font-size:0.78rem; color:#555; margin-top:12px; text-align:center;">
+        By sending, you agree to how we handle your video and details, <a href="#privacy" style="color:#000;">explained below</a>.
+      </p>
+    </form>
+
+    <section id="progressPanel" class="card-white" aria-live="polite" hidden>
+      <div class="progress-head">
+        <h2>Sending your video</h2>
+        <span id="progressPct" class="progress-pct">0%</span>
+      </div>
+      <div id="progressBar" class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Upload progress">
+        <div id="progressFill" class="bar-fill"></div>
+      </div>
+      <div id="progressDetail" class="progress-detail"></div>
+      <div id="progressStatus" class="progress-status"></div>
+      <p style="font-size:0.82rem; color:#444; margin-top:6px;">
+        Keep this page open until it says done. If your signal drops, it carries on automatically from where it stopped.
+        If the page closes, come back and pick the same video and it will resume.
+      </p>
+      <div class="progress-actions">
+        <button type="button" id="pauseBtn" class="btn-black-key">Pause</button>
+        <button type="button" id="cancelBtn" class="btn-plain">Cancel upload</button>
+      </div>
+    </section>
+
+    <section id="successPanel" class="card-white success" role="status" hidden>
+      <div class="badge" style="color:var(--gold-deep); border-color:var(--gold-deep);">✦ Received</div>
+      <h2>Thank you! We've got your video.</h2>
+      <p>We watch every clip. If we use yours, we'll tag you with the handle you gave us.</p>
+      <p id="successMode" style="font-size:0.82rem; color:#7a5d00;" hidden></p>
+      <div style="display:flex; flex-direction:column; gap:12px; align-items:center;">
+        <button type="button" id="anotherBtn" class="btn-gold" style="max-width:340px;">Send another clip</button>
+        <a href="https://www.instagram.com/asoftfocusband/" target="_blank" rel="noopener" class="btn-black-key">Follow @asoftfocusband</a>
+      </div>
+    </section>
+
+    <!-- DRAFT privacy note: to be approved by Kyle (Sophie or a lawyer may review). -->
+    <section id="privacy" class="privacy card-gloss">
+      <div class="sub">Draft, to be finalised</div>
+      <h2>How we look after your video and details</h2>
+      <ul>
+        <li><strong>What we collect:</strong> your name, any Instagram or Facebook handle you give us, your email if you add one, which gig you filmed, and your video. To stop spam and abuse we also keep a small technical record: the time, your approximate country, your browser type and a scrambled (one-way) version of your IP address.</li>
+        <li><strong>Why:</strong> to watch your clip, possibly use parts of it in A Soft Focus videos, credit and tag you, and contact you if we need to.</li>
+        <li><strong>Where it's stored:</strong> privately with Cloudflare and Google Drive, which may use servers outside Australia. Your video is never public unless we choose to use part of it in one of our own edits.</li>
+        <li><strong>How long:</strong> we delete clips we don't use after 12 months.</li>
+        <li><strong>Your choices:</strong> email <a href="mailto:bookings@asoftfocus.com">bookings@asoftfocus.com</a> at any time to have your video removed or to stop us using it. If we've already posted it, we'll take our post down or remove your clip from future edits.</li>
+        <li><strong>Other people in your video:</strong> if anyone in the crowd asks us to, we'll blur or cut them. We avoid featuring children.</li>
+        <li><strong>Location data:</strong> phones can store where a video was filmed inside the file. We never publish your original file, only our own edited versions.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 A Soft Focus (Kyle & Sammy-Jay). Hervey Bay & Fraser Coast, QLD. • <a href="mailto:bookings@asoftfocus.com">bookings@asoftfocus.com</a></p>
+  </footer>
+
+  <script src="assets/js/fan-video-upload.js" defer></script>
+</body>
+</html>
