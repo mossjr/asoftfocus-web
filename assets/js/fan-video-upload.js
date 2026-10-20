@@ -277,7 +277,7 @@
     job.doneBytes.forEach((b) => { sent += b; });
     job.inflight.forEach((b) => { sent += b; });
     sent = Math.min(sent, job.file.size);
-    const pct = job.file.size ? Math.floor((sent / job.file.size) * 100) : 0;
+    const pct = job.file.size ? Math.min(99, Math.floor((sent / job.file.size) * 100)) : 0; // 100% only once the server confirms
     els.barFill.style.width = pct + '%';
     els.bar.setAttribute('aria-valuenow', String(pct));
     els.pct.textContent = pct + '%';
@@ -303,6 +303,7 @@
       job.inflight.set(n, 0);
       const res = await putPart(n, blob, rec.token, (loaded) => { job.inflight.set(n, loaded); renderProgress(); });
       job.inflight.delete(n);
+      renderProgress();
       if (res.status === 200 && res.data.etag) {
         rec.parts[n] = res.data.etag;
         job.doneBytes.set(n, blob.size);
