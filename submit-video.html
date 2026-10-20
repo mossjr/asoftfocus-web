@@ -117,20 +117,21 @@
     .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .other-fields { border-left: 3px solid var(--gold); padding-left: 14px; margin: -4px 0 18px; }
 
-    .file-drop {
+    .field .file-drop {
       position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
-      border: 2px dashed #000; border-radius: 14px; padding: 26px 16px; text-align: center;
-      background: linear-gradient(180deg, #fffdf5, #fff); cursor: pointer;
+      border: 2px dashed #000; border-radius: 14px; padding: 26px 16px; text-align: center; font-weight: 400;
+      background: linear-gradient(180deg, #fffdf5, #fff); cursor: pointer; margin-bottom: 0;
     }
+    .file-drop .chosen { font-weight: 600; }
     .file-drop:focus-within { outline: 3px solid var(--gold); outline-offset: 2px; }
     .file-drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
     .file-drop .big { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; }
     .file-drop .chosen { font-size: 0.85rem; color: #444; word-break: break-all; }
 
-    .consent {
+    .field .consent {
       display: flex; gap: 12px; align-items: flex-start;
       background: #faf6e8; border: 1px solid var(--gold); border-radius: 12px; padding: 14px;
-      font-size: 0.86rem; line-height: 1.5; font-weight: 400 !important;
+      font-size: 0.86rem; line-height: 1.5; font-weight: 400; margin-bottom: 0;
     }
     #fanVideoForm, #progressPanel, #successPanel, #formError, .field { scroll-margin-top: 96px; }
     .consent input { width: 24px; height: 24px; flex: 0 0 24px; margin-top: 2px; accent-color: #000; }
