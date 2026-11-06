@@ -153,6 +153,23 @@
       "source": "Direct"
     },
     {
+      "id": "2026-12-13-markets-at-the-pier",
+      "title": "A Soft Focus Live at Markets at the Pier",
+      "venue": "markets-at-the-pier",
+      "venueName": "Markets at the Pier",
+      "address": "Urangan Pier, Esplanade",
+      "town": "Urangan",
+      "region": "QLD",
+      "postcode": "4655",
+      "start": "2026-12-13T15:00:00+10:00",
+      "end": "2026-12-13T17:00:00+10:00",
+      "timesApprox": true,
+      "format": "Piano & Vocal Duo",
+      "public": true,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Urangan%20Pier%2C%20Esplanade%2C%20Urangan%20QLD%204655",
+      "source": "Direct"
+    },
+    {
       "id": "2026-12-19-8-bit-bar",
       "title": "A Soft Focus Live at 8-Bit Bar",
       "venue": "8-bit-bar",
@@ -166,6 +183,23 @@
       "format": "Piano & Vocal Duo",
       "public": true,
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=8-Bit%20Bar%2C%201%2F352%20Esplanade%2C%20Scarness%20QLD%204655",
+      "source": "Direct"
+    },
+    {
+      "id": "2027-01-10-markets-at-the-pier",
+      "title": "A Soft Focus Live at Markets at the Pier",
+      "venue": "markets-at-the-pier",
+      "venueName": "Markets at the Pier",
+      "address": "Urangan Pier, Esplanade",
+      "town": "Urangan",
+      "region": "QLD",
+      "postcode": "4655",
+      "start": "2027-01-10T18:00:00+10:00",
+      "end": "2027-01-10T21:00:00+10:00",
+      "timesApprox": true,
+      "format": "Piano & Vocal Duo",
+      "public": true,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Urangan%20Pier%2C%20Esplanade%2C%20Urangan%20QLD%204655",
       "source": "Direct"
     },
     {

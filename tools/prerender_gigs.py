@@ -102,6 +102,12 @@ def media_html(g):
             f'<span class="venue-fallback-town">{e(g["town"])}</span></div>')
 
 
+def time_range(g):
+    """'8:00pm – 11:30pm', prefixed 'approx. ' when the gig has "timesApprox": true (unconfirmed times)."""
+    s, en = parse(g["start"]), parse(g["end"])
+    return ("approx. " if g.get("timesApprox") else "") + f"{time_str(s)} – {time_str(en)}"
+
+
 def next_html(g):
     s, en = parse(g["start"]), parse(g["end"])
     return (
@@ -112,7 +118,7 @@ def next_html(g):
         f'<h2 class="next-gig-venue">{e(venue_name(g))}</h2>'
         '<ul class="next-gig-meta">'
         f'<li><span>Date</span><strong>{e(date_long(s))}</strong></li>'
-        f'<li><span>Time</span><strong>{e(time_str(s))} – {e(time_str(en))}</strong></li>'
+        f'<li><span>Time</span><strong>{e(time_range(g))}</strong></li>'
         f'<li><span>Where</span><strong>{e(full_address(g))}</strong></li>'
         '</ul>'
         '<div class="next-gig-actions">'
@@ -168,7 +174,7 @@ def row_html(g):
         f'<div class="gig-date">{e(date_short(s))}</div>'
         f'<div class="gig-venue">{thumb_html(g)}<span class="gig-venue-text"><strong>{e(venue_name(g))}</strong>'
         f'<span>{e(g["address"])}, {e(g["town"])}</span>{credit_line(g)}</span></div>'
-        f'<div class="gig-type">{e(time_str(s))} – {e(time_str(en))} • {e(g["format"])}</div>'
+        f'<div class="gig-type">{e(time_range(g))} • {e(g["format"])}</div>'
         f'<a class="gig-badge" href="{e(g["mapsUrl"])}" target="_blank" rel="noopener">Directions ↗</a>'
         '</div>'
     )

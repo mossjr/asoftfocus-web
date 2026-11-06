@@ -148,7 +148,7 @@
       '<h2 class="next-gig-venue">' + esc(venueName(g)) + '</h2>' +
       '<ul class="next-gig-meta">' +
       '<li><span>Date</span><strong>' + esc(dateLong(g._start)) + '</strong></li>' +
-      '<li><span>Time</span><strong>' + esc(timeStr(g._start)) + ' – ' + esc(timeStr(g._end)) + '</strong></li>' +
+      '<li><span>Time</span><strong>' + esc(timeRange(g)) + '</strong></li>' +
       '<li><span>Where</span><strong>' + esc(fullAddress(g)) + '</strong></li>' +
       '</ul>' +
       '<div class="next-gig-actions">' +
@@ -176,11 +176,16 @@
     return g._img && g._img.credit ? '<small class="gig-photo-credit">' + esc(g._img.credit) + '</small>' : '';
   }
 
+  // "timesApprox": true in gigs-data.json marks times the venue hasn't confirmed yet.
+  function timeRange(g) {
+    return (g.timesApprox ? 'approx. ' : '') + timeStr(g._start) + ' – ' + timeStr(g._end);
+  }
+
   function rowHtml(g, past) {
     return '<div class="gig-row" data-gig-id="' + esc(g.id) + '">' +
       '<div class="gig-date">' + esc(dateShort(g._start)) + '</div>' +
       '<div class="gig-venue">' + thumbHtml(g) + '<span class="gig-venue-text"><strong>' + esc(venueName(g)) + '</strong><span>' + esc(g.address) + ', ' + esc(g.town) + '</span>' + creditLine(g) + '</span></div>' +
-      '<div class="gig-type">' + esc(timeStr(g._start)) + ' – ' + esc(timeStr(g._end)) + ' • ' + esc(g.format) + '</div>' +
+      '<div class="gig-type">' + esc(timeRange(g)) + ' • ' + esc(g.format) + '</div>' +
       (past
         ? '<span class="gig-badge">Recent Show</span>'
         : '<a class="gig-badge" href="' + esc(g.mapsUrl) + '" target="_blank" rel="noopener">Directions ↗</a>') +

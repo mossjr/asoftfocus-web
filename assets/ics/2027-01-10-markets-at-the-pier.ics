@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//A Soft Focus//Gigs//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2027-01-10-markets-at-the-pier@asoftfocus.com
+DTSTAMP:20261106T021403Z
+DTSTART:20270110T080000Z
+DTEND:20270110T110000Z
+SUMMARY:A Soft Focus Live at Markets at the Pier
+LOCATION:Markets at the Pier\, Urangan Pier\, Esplanade\, Urangan QLD 465
+ 5
+DESCRIPTION:A Soft Focus live at Markets at the Pier. Directions: https:/
+ /www.google.com/maps/search/?api=1&query=Urangan%20Pier%2C%20Esplanade%2C
+ %20Urangan%20QLD%204655
+URL:https://asoftfocus.com/
+END:VEVENT
+END:VCALENDAR
